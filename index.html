@@ -3,56 +3,119 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Monarch — Men's Clothing</title>
-  <meta name="description" content="Monarch — Modern men's clothing. Minimal, trendy retail for young adults & professionals in India." />
-  <!-- Tailwind CDN for quick deploy; replace with compiled CSS in production -->
+  <title>Nusrat Enterprises — Wholesaler & Retailer</title>
+  <meta name="description" content="Nusrat Enterprises — Wholesaler & Retailer of men's & kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear and more. Located in Goutam Nagar, Bhubaneswar." />
+  <link rel="icon" href="images/favicon.ico" />
+
+  <!-- Tailwind CDN (replace with compiled CSS for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/custom.css" />
+
+  <style>
+    /* Keep header above content */
+    .site-header { z-index: 50; }
+    /* Smooth focus outlines for keyboard users */
+    :focus { outline: 3px solid rgba(59,130,246,0.35); outline-offset: 2px; }
+    /* Logo square to match brand red */
+    .brand-logo { background: #E11D1D; color: #fff; }
+    /* subtle card hover */
+    .card:hover { transform: translateY(-4px); transition: transform .18s ease; }
+  </style>
+
+  <!-- Structured data for local business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Nusrat Enterprises",
+    "description": "Wholesaler & Retailer - Men's & Kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear.",
+    "telephone": "+919330066455",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. 53, Goutam Nagar",
+      "addressLocality": "Bhubaneswar",
+      "postalCode": "751014",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Sa 09:30-19:30"
+  }
+  </script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="antialiased text-gray-900 bg-white">
+
   <!-- Header / Nav -->
-  <header class="border-b border-gray-200">
+  <header class="site-header sticky top-0 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <span class="sr-only">Monarch</span>
-        <div class="w-10 h-10 bg-gray-800 text-white flex items-center justify-center rounded">
-          M
+      <a href="/" class="flex items-center gap-4">
+        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold">NE</div>
+        <div>
+          <div class="text-lg font-semibold">Nusrat Enterprises</div>
+          <div class="text-xs text-gray-500">Wholesaler & Retailer</div>
         </div>
-        <span class="text-lg font-semibold tracking-wide">Monarch</span>
       </a>
-      <nav class="hidden md:flex gap-6 items-center text-sm">
+
+      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
         <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
         <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
         <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
-        <a href="cart.html" aria-label="Cart" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
+        <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
       </nav>
-      <!-- Mobile menu -->
-      <div class="md:hidden">
-        <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 focus:outline-none" aria-label="Open menu">☰</button>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+          <span class="text-sm font-medium">WhatsApp</span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-md border border-gray-200">
+          <span class="sr-only">Toggle navigation</span>
+          <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Mobile nav panel -->
   <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
-    <div class="px-4 py-3 flex flex-col gap-2">
-      <a href="products.html" class="py-2">Products</a>
-      <a href="about.html" class="py-2">About</a>
-      <a href="contact.html" class="py-2">Contact</a>
-      <a href="cart.html" class="py-2">Cart (<span id="cart-count-mobile">0</span>)</a>
+    <div class="px-4 py-4 space-y-2">
+      <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
+      <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
+      <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
+      <a href="cart.html" class="block py-2 rounded hover:bg-gray-50">Cart (<span id="cart-count-mobile">0</span>)</a>
+      <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" class="block py-2 rounded hover:bg-gray-50">WhatsApp Support: 9330066455</a>
     </div>
   </div>
 
   <!-- Hero -->
   <main>
-    <section class="relative bg-[url('https://images.unsplash.com/photo-1556909218-31f90a2db0e0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a6f1f3f0bfae5e1d0d7f69b1b6ab7f6')] bg-cover bg-center">
-      <div class="bg-black bg-opacity-40">
-        <div class="max-w-6xl mx-auto px-4 py-24 sm:py-32 text-white">
-          <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Modern essentials for the modern man</h1>
-          <p class="mt-4 text-gray-200 max-w-xl">Minimal, versatile pieces crafted for young adults and professionals — curated fits and neutral tones for everyday confidence.</p>
-          <div class="mt-8">
-            <a href="products.html" class="inline-block bg-white text-gray-900 font-medium px-5 py-3 rounded-md shadow hover:shadow-lg">Shop Men’s</a>
+    <section class="relative bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">Nusrat Enterprises — Quality menswear at wholesale prices</h1>
+          <p class="mt-4 text-gray-700 max-w-xl">Minimal, versatile pieces crafted for young adults and professionals. Explore curated fits in neutral tones — T-shirts, shirts, jeans, chinos and more.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="products.html" class="px-6 py-3 bg-red-600 text-white rounded-md font-medium shadow hover:bg-red-700">Shop Now</a>
+            <a href="contact.html" class="px-6 py-3 border border-gray-200 rounded-md text-gray-700 hover:bg-gray-50">Get in touch</a>
           </div>
+
+          <div class="mt-8 grid grid-cols-3 gap-3 text-sm">
+            <div class="bg-white p-3 rounded shadow-sm text-center">
+              <div class="font-semibold">Wholesale</div>
+              <div class="text-gray-500">Bulk pricing</div>
+            </div>
+            <div class="bg-white p-3 rounded shadow-sm text-center">
+              <div class="font-semibold">Quality</div>
+              <div class="text-gray-500">Premium basics</div>
+            </div>
+            <div class="bg-white p-3 rounded shadow-sm text-center">
+              <div class="font-semibold">Support</div>
+              <div class="text-gray-500">WhatsApp & Call</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1556909218-31f90a2db0e0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a6f1f3f0bfae5e1d0d7f69b1b6ab7f6" alt="Mens fashion clothing display" class="w-full h-80 object-cover rounded shadow" />
         </div>
       </div>
     </section>
@@ -68,18 +131,22 @@
       </div>
     </section>
 
-    <!-- Why Monarch -->
+    <!-- Why choose us -->
     <section class="bg-gray-50">
       <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
-        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4628a6c1f1b9b9f6d6c1a2b4b2a1c0d0" alt="Men's fashion" class="w-full h-64 object-cover rounded-md shadow-sm" />
+        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4628a6c1f1b9b9f6d6c1a2b4b2a1c0d0" alt="Men's fashion" class="w-full h-64 object-cover rounded shadow" />
         <div>
           <h3 class="text-xl font-semibold">Built for everyday confidence</h3>
-          <p class="mt-3 text-gray-700">We design clean, wearable pieces with premium basics and modern cuts. Neutral palettes and large product images let you focus on fit and detail.</p>
-          <ul class="mt-4 text-gray-700 space-y-2">
+          <p class="mt-3 text-gray-700">Clean, wearable pieces with modern cuts. Neutral palettes and clear photos help you choose the right fit.</p>
+          <ul class="mt-4 text-gray-700 space-y-2 list-disc list-inside">
             <li>High-quality materials</li>
             <li>Timeless silhouettes</li>
             <li>Ethical retail & transparent pricing</li>
           </ul>
+          <div class="mt-4 text-sm text-gray-700">
+            <div class="font-medium">Deals in:</div>
+            <div>Men's & Kids' wear: T-shirts | Shirts | Jeans | Formal pants | Chinos | Trousers | Half pants | Sportswear | Innerwear</div>
+          </div>
         </div>
       </div>
     </section>
@@ -90,31 +157,56 @@
     <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
       <div>
         <a href="/" class="flex items-center gap-3">
-          <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
-          <span class="font-semibold">Monarch</span>
+          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold">NE</div>
+          <span class="font-semibold">Nusrat Enterprises</span>
         </a>
-        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — India</p>
+        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — Wholesaler & Retailer</p>
+        <p class="text-sm text-gray-600 mt-1">GSTIN: 21FCJPA3223D1ZG</p>
+        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar - 751014</p>
       </div>
-      <nav class="flex gap-4">
-        <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
-        <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
-        <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
-      </nav>
+
+      <div class="flex flex-col sm:flex-row gap-8">
+        <nav class="flex flex-col gap-2">
+          <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
+          <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
+        </nav>
+
+        <div>
+          <div class="text-sm font-medium">Customer Support</div>
+          <div class="text-sm text-gray-700 mt-1">WhatsApp: <a href="https://wa.me/919330066455" class="text-green-600">9330066455</a></div>
+          <div class="text-sm text-gray-700 mt-1">Phones: 9040366455, 9437303864, 7978830017</div>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+    <span class="font-medium text-sm">WhatsApp: 9330066455</span>
+  </a>
+
+  <!-- Scripts -->
   <script src="js/utils.js"></script>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
 
-    // initialize UI
-    Products.renderFeatured('#featured-list', 8);
-    Cart.updateCartCountUI();
+  <script>
+    // Mobile menu toggle (accessible)
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Initialize UI (guarded)
+    if (typeof Products !== 'undefined' && Products.renderFeatured) Products.renderFeatured('#featured-list', 8);
+    if (typeof Cart !== 'undefined' && Cart.updateCartCountUI) Cart.updateCartCountUI();
   </script>
 </body>
 </html>
