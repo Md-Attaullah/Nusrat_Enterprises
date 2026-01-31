@@ -10,7 +10,6 @@
   <!-- Tailwind CDN (replace with compiled CSS for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Optional small custom rules -->
   <style>
     /* Keep header above content */
     .site-header { z-index: 50; }
@@ -197,11 +196,13 @@
     // Mobile menu toggle (accessible)
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-      mobileBtn.setAttribute('aria-expanded', String(!expanded));
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
     // Initialize UI (guarded)
     if (typeof Products !== 'undefined' && Products.renderFeatured) Products.renderFeatured('#featured-list', 8);
