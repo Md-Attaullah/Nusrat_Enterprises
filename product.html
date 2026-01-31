@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,8 +13,8 @@
 
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-sm px-3 py-2 rounded shadow">Skip to content</a>
 
-  <!-- Header / Nav (same as index) -->
-  <header class="site-header sticky top-0 bg-white border-b border-gray-200">
+  <!-- Header / Nav -->
+  <header class="site-header sticky top-0 bg-white border-b border-gray-200 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-4">
         <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold" style="background:#E11D1D;color:#fff;">NE</div>
@@ -25,7 +26,7 @@
 
       <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
         <a href="index.html" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
-        <a href="products.html" class="text-gray-700 hover:text-gray-900 font-medium">Products</a>
+        <a href="products.html" class="text-gray-900 font-semibold">Products</a>
         <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
         <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
         <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
@@ -48,6 +49,7 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
     <div class="px-4 py-4 space-y-2">
+      <a href="index.html" class="block py-2 rounded hover:bg-gray-50">Home</a>
       <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
       <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
       <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
@@ -61,7 +63,7 @@
       <div class="text-sm text-gray-600">Showing popular items</div>
     </div>
 
-    <!-- Filters (example) -->
+    <!-- Filters -->
     <div class="mb-6 flex items-center gap-3">
       <select class="border rounded px-3 py-2 text-sm">
         <option>All categories</option>
@@ -125,8 +127,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Add more sample cards or render dynamically with js/products.js -->
     </div>
 
     <div class="mt-10 text-center">
