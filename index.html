@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monarch — Modern Men's Clothing</title>
+  <meta name="description" content="Monarch — Modern men's clothing. Minimal, trendy retail for young adults & professionals in India." />
+  <!-- Tailwind CDN (quick start). Replace with compiled CSS for production -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <!-- Schema.org JSON-LD (update address and image URL) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Monarch",
+    "image": "https://yourdomain.com/assets/logo.png",
+    "telephone": "+91 9003366455",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "REPLACE_STREET_ADDRESS",
+      "addressLocality": "REPLACE_CITY",
+      "addressRegion": "REPLACE_STATE",
+      "postalCode": "REPLACE_PIN",
+      "addressCountry": "IN"
+    },
+    "url": "https://yourdomain.com"
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3" aria-label="Monarch — Home">
+        <!-- Replace /assets/logo.png with your actual logo file path. Use optimized PNG/SVG for best results. -->
+        <img src="/assets/logo.png" alt="Company logo" class="w-10 h-10 object-contain" />
+        <span class="text-lg font-semibold tracking-wide">Monarch</span>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm" aria-label="Primary">
+        <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
+        <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+        <a href="cart.html" aria-label="Cart" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-2 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav panel -->
+  <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
+    <div class="px-4 py-3 flex flex-col gap-2">
+      <a href="products.html" class="py-2">Products</a>
+      <a href="about.html" class="py-2">About</a>
+      <a href="contact.html" class="py-2">Contact</a>
+      <a href="cart.html" class="py-2">Cart (<span id="cart-count-mobile">0</span>)</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative bg-[url('https://images.unsplash.com/photo-1556909218-31f90a2db0e0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a6f1f3f0bfae5e1d0d7f69b1b6ab7f6')] bg-cover bg-center">
+      <div class="bg-black bg-opacity-45">
+        <div class="max-w-6xl mx-auto px-4 py-28 text-white">
+          <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Modern essentials for the modern man</h1>
+          <p class="mt-4 text-gray-200 max-w-xl">Minimal, versatile pieces crafted for young adults and professionals — neutral palettes and smart fits for everyday confidence.</p>
+          <div class="mt-8">
+            <a href="products.html" class="inline-block bg-white text-gray-900 font-medium px-5 py-3 rounded-md shadow hover:shadow-lg" aria-label="Shop Men's">Shop Men’s</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured products -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Featured</h2>
+        <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">View all</a>
+      </div>
+
+      <div id="featured-list" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" aria-live="polite">
+        <!-- Product cards injected by js/products.js -->
+      </div>
+    </section>
+
+    <!-- Why Monarch -->
+    <section class="bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
+        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4628a6c1f1b9b9f6d6c1a2b4b2a1c0d0" alt="Men's fashion" class="w-full h-64 object-cover rounded-md shadow-sm" />
+        <div>
+          <h3 class="text-xl font-semibold">Built for everyday confidence</h3>
+          <p class="mt-3 text-gray-700">We design clean, wearable pieces with premium basics and modern cuts. Neutral palettes and large product images let you focus on fit and detail.</p>
+          <ul class="mt-4 text-gray-700 space-y-2 list-disc pl-5">
+            <li>High-quality materials</li>
+            <li>Timeless silhouettes</li>
+            <li>Ethical retail & transparent pricing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact teaser + Map (replace embed src with your map embed or coordinates) -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold">Visit / Contact</h3>
+          <p class="mt-3 text-gray-700">For store visits and customer support, reach out via phone or WhatsApp. Below is our approximate location — replace with your exact embed from Google Maps for a precise map.</p>
+
+          <div class="mt-4 text-sm text-gray-700 space-y-2">
+            <div>Phone: <a href="tel:+919003366455" class="text-gray-900">+91 90033 66455</a></div>
+            <div>WhatsApp: <a href="https://wa.me/919003366455" target="_blank" rel="noopener" class="text-green-600">Chat on WhatsApp</a></div>
+            <div>Address: <span id="homepage-address">[Replace with full address]</span></div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Map iframe placeholder:
+               Replace the `src` value with the embed HTML Google Maps provides (Share → Embed a map)
+               OR replace LAT,LNG below with actual coordinates:
+               src="https://www.google.com/maps?q=LAT,LNG&hl=en&z=15&output=embed"
+          -->
+          <div class="w-full h-64 rounded overflow-hidden border">
+            <iframe
+              title="Company location"
+              width="100%"
+              height="100%"
+              class="border-0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=19.0760,72.8777&hl=en&z=14&output=embed"
+              aria-label="Company location on map"></iframe>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">Map is a placeholder — replace with your exact Google Maps embed for accurate pin & directions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp support button -->
+  <a href="https://wa.me/919003366455?text=Hi%20I%20need%20support" target="_blank" rel="noopener"
+     class="fixed right-4 bottom-4 z-50 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg flex items-center gap-2"
+     aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.27 0 11.78 0 13.9.63 15.9 1.78 17.63L0 24l6.56-1.73A11.9 11.9 0 0012 23.56c6.63 0 11.99-5.27 11.99-11.78 0-3.15-1.2-6.09-3.47-8.3zM12 21.5c-1.3 0-2.58-.28-3.75-.84l-.27-.13-3.9 1.03.83-3.75-.16-.29A8.12 8.12 0 013.88 11.8C3.88 7 7.87 3.28 12.68 3.28c4.8 0 8.8 3.72 8.8 8.52 0 4.8-4 8.7-9.48 8.7z"/>
+    </svg>
+    <span class="hidden sm:inline">Support</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
+      <div>
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/logo.png" alt="Company logo" class="w-8 h-8 object-contain" />
+          <span class="font-semibold">Monarch</span>
+        </a>
+        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — India</p>
+      </div>
+
+      <div class="text-sm text-gray-700 space-y-1">
+        <div>Address: <span id="footer-address">[Replace with full address]</span></div>
+        <div>Phone: <a href="tel:+919003366455" class="text-gray-900">+91 90033 66455</a></div>
+        <div>WhatsApp: <a href="https://wa.me/919003366455" target="_blank" rel="noopener" class="text-green-600">Chat on WhatsApp</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Initialize featured products and cart UI
+    document.addEventListener('DOMContentLoaded', function () {
+      // Renders the first 8 products into the Featured section
+      Products.renderFeatured('#featured-list', 8).catch(err => {
+        console.error('Failed to render featured products', err);
+        document.querySelector('#featured-list').innerHTML = '<p class="text-gray-600">Unable to load featured products.</p>';
+      });
+
+      // Update cart count (reads localStorage)
+      Cart.updateCartCountUI();
+
+      // Optional: replace placeholder address text if you set it in a global variable
+      // Example:
+      // const ADDRESS = "12 MG Road, Bengaluru, Karnataka 560001";
+      // document.getElementById('homepage-address').textContent = ADDRESS;
+      // document.getElementById('footer-address').textContent = ADDRESS;
+    });
+  </script>
+</body>
+</html>
