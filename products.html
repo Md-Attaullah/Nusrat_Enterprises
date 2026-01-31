@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Monarch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
+        <span class="text-lg font-semibold">Monarch</span>
+      </a>
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
+        <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+        <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+      <div class="md:hidden">
+        <a href="cart.html" class="text-gray-700">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-semibold">All Products</h1>
+
+    <!-- Filters -->
+    <div class="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <label for="category" class="sr-only">Category</label>
+        <select id="category" class="border rounded px-3 py-2 text-sm">
+          <option value="all">All categories</option>
+          <option value="T-Shirts">T-Shirts</option>
+          <option value="Shirts">Shirts</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Hoodies">Hoodies</option>
+        </select>
+        <button id="clear-filter" class="text-sm text-gray-600">Clear</button>
+      </div>
+
+      <div class="flex gap-3 items-center">
+        <span class="text-sm text-gray-600">Sort</span>
+        <select id="sort" class="border rounded px-3 py-2 text-sm">
+          <option value="featured">Featured</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product grid -->
+    <div id="product-grid" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- injected by js/products.js -->
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-sm text-gray-600">© Monarch 2026</div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    // initialize products list with filters
+    Products.initList({
+      gridSelector: '#product-grid',
+      categorySelector: '#category',
+      sortSelector: '#sort'
+    });
+    Cart.updateCartCountUI();
+  </script>
+</body>
+</html>

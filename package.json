@@ -1,0 +1,12 @@
+{
+  "name": "monarch-mens-store",
+  "version": "1.0.0",
+  "description": "Static e-commerce site for men's retail using Tailwind",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles.css -o ./css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

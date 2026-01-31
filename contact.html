@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Monarch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="bg-white text-gray-900 antialiased">
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
+        <span class="text-lg font-semibold">Monarch</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-2xl font-semibold">Contact Us</h1>
+    <p class="mt-3 text-gray-700">Questions about fit, orders or styling? Send us a message and we'll reply within 48 hours.</p>
+
+    <form id="contact-form" class="mt-6 space-y-4" novalidate>
+      <div>
+        <label for="name" class="block text-sm font-medium">Name</label>
+        <input id="name" name="name" required class="mt-1 block w-full border rounded px-3 py-2" />
+        <p class="text-sm text-red-600 mt-1 hidden" id="name-error">Please enter your name.</p>
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium">Email</label>
+        <input id="email" name="email" type="email" required class="mt-1 block w-full border rounded px-3 py-2" />
+        <p class="text-sm text-red-600 mt-1 hidden" id="email-error">Please enter a valid email.</p>
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium">Message</label>
+        <textarea id="message" name="message" rows="5" required class="mt-1 block w-full border rounded px-3 py-2"></textarea>
+        <p class="text-sm text-red-600 mt-1 hidden" id="message-error">Please enter a message.</p>
+      </div>
+      <button type="submit" class="bg-gray-900 text-white px-4 py-2 rounded">Send message</button>
+      <p id="contact-success" class="text-green-600 hidden">Thanks! Your message has been sent (demo).</p>
+    </form>
+  </main>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>
