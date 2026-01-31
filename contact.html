@@ -149,8 +149,8 @@
       const msg = document.getElementById('message').value.trim();
       if (!name || !email || !msg) return alert('Please complete all fields.');
 
-      // Prefill email (replace recipient with your support email)
-      const recipient = 'support@example.com';
+      // Prefill email to Nusrat Enterprises
+      const recipient = 'nusratenterprises53@gmail.com';
       const subject = encodeURIComponent('Contact from website: ' + name);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
       const mailto = `mailto:${recipient}?subject=${subject}&body=${body}`;
