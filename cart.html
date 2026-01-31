@@ -3,39 +3,389 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cart — Monarch</title>
+  <title>Cart — Nusrat Enterprises</title>
+  <meta name="description" content="Your shopping cart at Nusrat Enterprises — Wholesaler & Retailer of men's & kids' wear in Bhubaneswar." />
+  <link rel="icon" href="images/favicon.ico" />
+
+  <!-- Tailwind CDN (replace with compiled CSS for production) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/custom.css" />
+
+  <style>
+    .site-header { z-index: 50; }
+    :focus { outline: 3px solid rgba(59,130,246,0.35); outline-offset: 2px; }
+    .brand-logo { background: #E11D1D; color: #fff; }
+    .card:hover { transform: translateY(-2px); transition: transform .18s ease; }
+    .qty-btn { min-width: 2.25rem; }
+  </style>
+
+  <!-- Structured data (Organization / Store) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Nusrat Enterprises",
+    "url": "https://example.com/cart.html",
+    "description": "Wholesaler & Retailer - Men's & Kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear.",
+    "telephone": "+919330066455",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. 53, Goutam Nagar",
+      "addressLocality": "Bhubaneswar",
+      "postalCode": "751014",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Sa 09:30-19:30"
+  }
+  </script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
-  <header class="border-b border-gray-200">
+<body class="antialiased text-gray-900 bg-white">
+
+  <!-- Header / Nav -->
+  <header class="site-header sticky top-0 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
-        <span class="text-lg font-semibold">Monarch</span>
+      <a href="index.html" class="flex items-center gap-4">
+        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold">NE</div>
+        <div>
+          <div class="text-lg font-semibold">Nusrat Enterprises</div>
+          <div class="text-xs text-gray-500">Wholesaler &amp; Retailer</div>
+        </div>
       </a>
-      <nav class="hidden md:flex gap-6 items-center text-sm">
+
+      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
         <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
         <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
         <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
-        <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
+        <a href="cart.html" class="text-gray-900 font-medium">Cart (<span id="cart-count">0</span>)</a>
       </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+          <span class="text-sm font-medium">WhatsApp</span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-md border border-gray-200">
+          <span class="sr-only">Toggle navigation</span>
+          <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-2xl font-semibold">Your Cart</h1>
-    <div id="cart-container" class="mt-6">
-      <!-- Cart UI injected by js/cart.js -->
+  <!-- Mobile nav panel -->
+  <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
+    <div class="px-4 py-4 space-y-2">
+      <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
+      <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
+      <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
+      <a href="cart.html" class="block py-2 rounded hover:bg-gray-50">Cart (<span id="cart-count-mobile">0</span>)</a>
+      <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" class="block py-2 rounded hover:bg-gray-50">WhatsApp Support: 9330066455</a>
     </div>
+  </div>
+
+  <main>
+    <!-- Page header -->
+    <section class="bg-gray-50 border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold">Your Cart</h1>
+        <p class="text-gray-600 mt-1">Review your items, adjust quantities, and proceed to checkout.</p>
+      </div>
+    </section>
+
+    <!-- Cart layout -->
+    <section class="max-w-6xl mx-auto px-4 py-8 grid lg:grid-cols-3 gap-8">
+      <!-- Cart items -->
+      <div class="lg:col-span-2">
+        <!-- Empty state -->
+        <div id="cart-empty" class="hidden text-center bg-white border border-dashed border-gray-300 rounded p-10">
+          <div class="text-gray-900 font-semibold">Your cart is empty</div>
+          <p class="text-gray-600 mt-1">Browse products and add items to your cart.</p>
+          <a href="products.html" class="inline-block mt-4 px-6 py-3 bg-red-600 text-white rounded-md font-medium hover:bg-red-700">Continue shopping</a>
+        </div>
+
+        <!-- Items table -->
+        <div id="cart-items" class="bg-white border border-gray-200 rounded overflow-hidden">
+          <div class="hidden sm:grid grid-cols-12 gap-4 px-4 py-3 bg-gray-50 text-xs font-medium text-gray-600">
+            <div class="col-span-6">Item</div>
+            <div class="col-span-2 text-center">Price</div>
+            <div class="col-span-2 text-center">Quantity</div>
+            <div class="col-span-2 text-right">Subtotal</div>
+          </div>
+          <div id="cart-items-list" class="divide-y divide-gray-100">
+            <!-- Rows injected via JS -->
+          </div>
+        </div>
+
+        <!-- Promo / Notes -->
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="bg-white border border-gray-200 rounded p-4">
+            <label for="promo" class="block text-sm font-medium text-gray-700">Have a promo code?</label>
+            <div class="mt-2 flex gap-2">
+              <input id="promo" type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-red-200" placeholder="Enter code (optional)" />
+              <button id="apply-promo" class="px-4 py-2 border border-gray-200 rounded text-gray-700 hover:bg-gray-50">Apply</button>
+            </div>
+            <p id="promo-msg" class="mt-2 text-sm text-gray-600"></p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded p-4">
+            <label for="order-notes" class="block text-sm font-medium text-gray-700">Order notes</label>
+            <textarea id="order-notes" rows="3" class="mt-2 w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-red-200" placeholder="Any instructions for delivery or packing?"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order summary -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white border border-gray-200 rounded p-4 lg:sticky lg:top-24">
+          <h2 class="text-lg font-semibold">Order Summary</h2>
+          <div class="mt-4 space-y-2 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-700">Subtotal</span>
+              <span id="summary-subtotal" class="font-medium">₹0</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-700">Discount</span>
+              <span id="summary-discount" class="text-green-700">- ₹0</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-700">GST (incl.)</span>
+              <span id="summary-tax" class="text-gray-800">₹0</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t">
+              <span class="text-gray-900 font-semibold">Total</span>
+              <span id="summary-total" class="text-gray-900 font-semibold">₹0</span>
+            </div>
+          </div>
+
+          <div class="mt-5 space-y-2">
+            <button id="checkout-btn" class="w-full px-5 py-3 bg-red-600 text-white rounded-md font-medium hover:bg-red-700">Proceed to Checkout</button>
+            <a href="products.html" class="w-full inline-flex justify-center px-5 py-3 border border-gray-200 rounded-md text-gray-700 hover:bg-gray-50">Continue Shopping</a>
+          </div>
+
+          <p class="mt-3 text-xs text-gray-500">By placing your order, you agree to our <a href="#" class="underline">Terms</a> &amp; <a href="#" class="underline">Returns</a>.</p>
+        </div>
+      </aside>
+    </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
+      <div>
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold">NE</div>
+          <span class="font-semibold">Nusrat Enterprises</span>
+        </a>
+        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — Wholesaler &amp; Retailer</p>
+        <p class="text-sm text-gray-600 mt-1">GSTIN: 21FCJPA3223D1ZG</p>
+        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar - 751014</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-8">
+        <nav class="flex flex-col gap-2">
+          <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
+          <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
+        </nav>
+
+        <div>
+          <div class="text-sm font-medium">Customer Support</div>
+          <div class="text-sm text-gray-700 mt-1">WhatsApp: <a href="https://wa.me/919330066455" class="text-green-600">9330066455</a></div>
+          <div class="text-sm text-gray-700 mt-1">Phones: 9040366455, 9437303864, 7978830017</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+    <span class="font-medium text-sm">WhatsApp: 9330066455</span>
+  </a>
+
+  <!-- Scripts -->
   <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      Cart.renderCart('#cart-container');
-    });
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // --- Cart Rendering Logic ---
+    // Expects a global Cart object from js/cart.js with:
+    // - Cart.getItems() -> [{id, name, price, qty, image, variant}]
+    // - Cart.updateQty(id, qty)
+    // - Cart.remove(id)
+    // - Cart.getTotals() -> { subtotal, discount, tax, total }
+    // - Cart.updateCartCountUI()
+    (function initCartPage() {
+      const itemsWrap = document.getElementById('cart-items-list');
+      const emptyState = document.getElementById('cart-empty');
+      const itemsBox = document.getElementById('cart-items');
+
+      const elSubtotal = document.getElementById('summary-subtotal');
+      const elDiscount = document.getElementById('summary-discount');
+      const elTax = document.getElementById('summary-tax');
+      const elTotal = document.getElementById('summary-total');
+
+      const cartItems = (typeof Cart !== 'undefined' && Cart.getItems) ? Cart.getItems() : [];
+      const fmt = (n) => `₹${(Number(n) || 0).toLocaleString('en-IN')}`;
+
+      function render() {
+        itemsWrap.innerHTML = '';
+        const items = (typeof Cart !== 'undefined' && Cart.getItems) ? Cart.getItems() : [];
+
+        if (!items.length) {
+          emptyState.classList.remove('hidden');
+          itemsBox.classList.add('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+          itemsBox.classList.remove('hidden');
+
+          items.forEach(item => {
+            const row = document.createElement('div');
+            row.className = 'p-4 grid grid-cols-12 gap-4 items-center';
+            row.setAttribute('data-id', item.id);
+
+            row.innerHTML = `
+              <div class="col-span-12 sm:col-span-6 flex items-center gap-4">
+                <img src="${item.image || 'https://via.placeholder.com/96x96'}" alt="${item.name || 'Product'}" class="w-16 h-16 object-cover rounded border" />
+                <div>
+                  <div class="font-medium text-gray-900">${item.name || 'Product'}</div>
+                  ${item.variant ? `<div class="text-xs text-gray-500 mt-0.5">${item.variant}</div>` : ''}
+                  <button class="text-xs text-red-600 mt-2 hover:underline remove-btn">Remove</button>
+                </div>
+              </div>
+
+              <div class="col-span-6 sm:col-span-2 text-left sm:text-center text-gray-800 font-medium">
+                ${fmt(item.price)}
+              </div>
+
+              <div class="col-span-6 sm:col-span-2">
+                <div class="flex items-center justify-start sm:justify-center gap-2">
+                  <button class="qty-btn border rounded px-2 py-1" aria-label="Decrease quantity">-</button>
+                  <input type="number" min="1" class="w-14 text-center border rounded py-1" value="${item.qty || 1}" />
+                  <button class="qty-btn border rounded px-2 py-1" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+
+              <div class="col-span-12 sm:col-span-2 text-left sm:text-right font-semibold text-gray-900">
+                ${fmt((item.price || 0) * (item.qty || 1))}
+              </div>
+            `;
+
+            // Wire controls
+            const decBtn = row.querySelector('.qty-btn:nth-of-type(1)');
+            const qtyInput = row.querySelector('input[type="number"]');
+            const incBtn = row.querySelector('.qty-btn:nth-of-type(2)');
+            const removeBtn = row.querySelector('.remove-btn');
+
+            decBtn.addEventListener('click', () => {
+              let q = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
+              qtyInput.value = q;
+              if (typeof Cart !== 'undefined' && Cart.updateQty) Cart.updateQty(item.id, q);
+              updateTotals();
+              render(); // re-render to update subtotal cell
+            });
+
+            incBtn.addEventListener('click', () => {
+              let q = Math.max(1, (parseInt(qtyInput.value, 10) || 1) + 1);
+              qtyInput.value = q;
+              if (typeof Cart !== 'undefined' && Cart.updateQty) Cart.updateQty(item.id, q);
+              updateTotals();
+              render();
+            });
+
+            qtyInput.addEventListener('change', () => {
+              let q = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+              qtyInput.value = q;
+              if (typeof Cart !== 'undefined' && Cart.updateQty) Cart.updateQty(item.id, q);
+              updateTotals();
+              render();
+            });
+
+            removeBtn.addEventListener('click', () => {
+              if (typeof Cart !== 'undefined' && Cart.remove) Cart.remove(item.id);
+              updateTotals();
+              render();
+            });
+
+            itemsWrap.appendChild(row);
+          });
+        }
+
+        updateTotals();
+      }
+
+      function updateTotals() {
+        const totals = (typeof Cart !== 'undefined' && Cart.getTotals) ? Cart.getTotals() : { subtotal: 0, discount: 0, tax: 0, total: 0 };
+        elSubtotal.textContent = fmt(totals.subtotal);
+        elDiscount.textContent = totals.discount ? `- ${fmt(totals.discount)}` : '- ₹0';
+        elTax.textContent = fmt(totals.tax);
+        elTotal.textContent = fmt(totals.total);
+        if (typeof Cart !== 'undefined' && Cart.updateCartCountUI) Cart.updateCartCountUI();
+      }
+
+      // Promo mock (hook to your logic later)
+      const promoBtn = document.getElementById('apply-promo');
+      const promoInput = document.getElementById('promo');
+      const promoMsg = document.getElementById('promo-msg');
+      if (promoBtn && promoInput && promoMsg) {
+        promoBtn.addEventListener('click', () => {
+          const code = (promoInput.value || '').trim().toUpperCase();
+          if (!code) {
+            promoMsg.textContent = 'Please enter a promo code.';
+            promoMsg.className = 'mt-2 text-sm text-red-600';
+            return;
+          }
+          // If you have Cart.applyCoupon(code), call it here and re-render.
+          if (typeof Cart !== 'undefined' && Cart.applyCoupon) {
+            const ok = Cart.applyCoupon(code);
+            promoMsg.textContent = ok ? `Coupon "${code}" applied.` : 'Invalid or expired coupon.';
+            promoMsg.className = `mt-2 text-sm ${ok ? 'text-green-700' : 'text-red-600'}`;
+            render();
+          } else {
+            promoMsg.textContent = 'Promo feature not enabled.';
+            promoMsg.className = 'mt-2 text-sm text-gray-600';
+          }
+        });
+      }
+
+      // Checkout
+      const checkoutBtn = document.getElementById('checkout-btn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+          const items = (typeof Cart !== 'undefined' && Cart.getItems) ? Cart.getItems() : [];
+          if (!items.length) {
+            alert('Your cart is empty.');
+            return;
+          }
+          // Option 1: redirect to a checkout page
+          // window.location.href = 'checkout.html';
+
+          // Option 2: build WhatsApp order text (simple PoC)
+          const orderLines = items.map(i => `${i.name} x${i.qty} — ₹${i.price}`).join('%0A');
+          const totals = (typeof Cart !== 'undefined' && Cart.getTotals) ? Cart.getTotals() : { total: 0 };
+          const msg = `Hello, I want to place an order:%0A${orderLines}%0A%0ATotal: ₹${totals.total}`;
+          window.open(`https://wa.me/919330066455?text=${msg}`, '_blank', 'noopener');
+        });
+      }
+
+      // Initial render
+      render();
+    })();
+
+    // Initialize global UI elements if available
+    if (typeof Cart !== 'undefined' && Cart.updateCartCountUI) Cart.updateCartCountUI();
   </script>
 </body>
 </html>
