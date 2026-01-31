@@ -3,38 +3,183 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product — Monarch</title>
+  <title>Products — Nusrat Enterprises</title>
+  <meta name="description" content="Browse products — Nusrat Enterprises: T-shirts, shirts, jeans, chinos and more. Wholesale & Retail." />
+  <link rel="icon" href="images/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/custom.css" />
 </head>
-<body class="bg-white text-gray-900 antialiased">
-  <header class="border-b border-gray-200">
+<body class="antialiased text-gray-900 bg-white">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-sm px-3 py-2 rounded shadow">Skip to content</a>
+
+  <!-- Header / Nav (same as index) -->
+  <header class="site-header sticky top-0 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
-        <span class="text-lg font-semibold">Monarch</span>
+      <a href="/" class="flex items-center gap-4">
+        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold" style="background:#E11D1D;color:#fff;">NE</div>
+        <div>
+          <div class="text-lg font-semibold">Nusrat Enterprises</div>
+          <div class="text-xs text-gray-500">Wholesaler & Retailer</div>
+        </div>
       </a>
-      <nav class="hidden md:flex gap-6 items-center text-sm">
-        <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
+        <a href="products.html" class="text-gray-700 hover:text-gray-900 font-medium">Products</a>
         <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
         <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
         <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
       </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+          <span class="text-sm font-medium">WhatsApp</span>
+        </a>
+
+        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-md border border-gray-200">
+          <span class="sr-only">Toggle navigation</span>
+          <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 py-8">
-    <div id="product-detail" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- content injected by js/product-page.js -->
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
+    <div class="px-4 py-4 space-y-2">
+      <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
+      <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
+      <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
+      <a href="cart.html" class="block py-2 rounded hover:bg-gray-50">Cart (<span id="cart-count-mobile">0</span>)</a>
+    </div>
+  </div>
+
+  <main id="main" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold">Products</h1>
+      <div class="text-sm text-gray-600">Showing popular items</div>
+    </div>
+
+    <!-- Filters (example) -->
+    <div class="mb-6 flex items-center gap-3">
+      <select class="border rounded px-3 py-2 text-sm">
+        <option>All categories</option>
+        <option>T-Shirts</option>
+        <option>Shirts</option>
+        <option>Jeans</option>
+      </select>
+      <input type="search" placeholder="Search products..." class="border rounded px-3 py-2 text-sm w-full max-w-md" aria-label="Search products" />
+    </div>
+
+    <!-- Products grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Product card 1 -->
+      <article class="bg-white rounded shadow-sm overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1530845640669-0d0f7fa0c5f9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="Classic crew t-shirt" class="w-full h-48 object-cover" loading="lazy" />
+        <div class="p-3">
+          <h3 class="font-medium">Classic Crew T‑shirt</h3>
+          <div class="text-sm text-gray-500 mt-1">Cotton, multiple colors</div>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-semibold">₹299</div>
+            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Classic Crew T-shirt to cart">Add</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product card 2 -->
+      <article class="bg-white rounded shadow-sm overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="Casual linen shirt" class="w-full h-48 object-cover" loading="lazy" />
+        <div class="p-3">
+          <h3 class="font-medium">Casual Linen Shirt</h3>
+          <div class="text-sm text-gray-500 mt-1">Breathable, summer fit</div>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-semibold">₹799</div>
+            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Casual Linen Shirt to cart">Add</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product card 3 -->
+      <article class="bg-white rounded shadow-sm overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1520975913164-8f9b461a2a77?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="Slim fit jeans" class="w-full h-48 object-cover" loading="lazy" />
+        <div class="p-3">
+          <h3 class="font-medium">Slim Fit Jeans</h3>
+          <div class="text-sm text-gray-500 mt-1">Stretch denim</div>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-semibold">₹1,299</div>
+            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Slim Fit Jeans to cart">Add</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product card 4 -->
+      <article class="bg-white rounded shadow-sm overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=jkl" alt="Formal trousers" class="w-full h-48 object-cover" loading="lazy" />
+        <div class="p-3">
+          <h3 class="font-medium">Formal Trousers</h3>
+          <div class="text-sm text-gray-500 mt-1">Smart office wear</div>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-semibold">₹1,499</div>
+            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Formal Trousers to cart">Add</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Add more sample cards or render dynamically with js/products.js -->
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="contact.html" class="px-6 py-3 bg-red-600 text-white rounded-md font-medium shadow hover:bg-red-700">Contact for wholesale pricing</a>
     </div>
   </main>
 
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
+      <div>
+        <a href="/" class="flex items-center gap-3">
+          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold" style="background:#E11D1D;">NE</div>
+          <span class="font-semibold">Nusrat Enterprises</span>
+        </a>
+        <p class="text-sm text-gray-600 mt-2">GSTIN: 21FCJPA3223D1ZG</p>
+        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar - 751014</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-8">
+        <nav class="flex flex-col gap-2">
+          <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
+          <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
+          <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
+        </nav>
+        <div>
+          <div class="text-sm font-medium">Customer Support</div>
+          <div class="text-sm text-gray-700 mt-1">WhatsApp: <a href="https://wa.me/919330066455" class="text-green-600">9330066455</a></div>
+          <div class="text-sm text-gray-700 mt-1">Phones: 9040366455, 9437303864, 7978830017</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+    <span class="font-medium text-sm">WhatsApp: 9330066455</span>
+  </a>
+
   <script src="js/utils.js"></script>
-  <script src="js/product-page.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
+
   <script>
-    ProductPage.init(); // reads ?id= and renders
-    Cart.updateCartCountUI();
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
   </script>
 </body>
 </html>
