@@ -3,22 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Monarch — Men's Clothing</title>
-  <meta name="description" content="Monarch — Modern men's clothing. Minimal, trendy retail for young adults & professionals in India." />
-  <!-- Tailwind CDN for quick deploy; replace with compiled CSS in production -->
+  <title>Nusrat Enterprises — Wholesaler | Retailer</title>
+  <meta name="description" content="Nusrat Enterprises — Wholesaler & Retailer of men's & kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear and more." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/custom.css" />
 </head>
 <body class="bg-white text-gray-900 antialiased">
+  <!-- Top banner with GSTIN and contacts -->
+  <div class="bg-red-600 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
+      <div class="flex items-center gap-3">
+        <!-- Inline NE logo -->
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+          <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="100" height="100" rx="0" fill="#E11D1D" />
+            <g fill="#fff" font-family="sans-serif" font-weight="700">
+              <text x="12" y="64" font-size="62">NE</text>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="font-semibold">NUSRAT ENTERPRISES</div>
+          <div class="text-xs opacity-90">WHOLESALER | RETAILER</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="text-xs">GSTIN: <span class="font-medium">21FCJPA3223D1ZG</span></div>
+        <div class="text-xs">Plot No. 53, Goutam Nagar, Bhubaneswar - 751014</div>
+        <div class="flex items-center gap-3">
+          <a href="tel:9330066455" class="bg-white text-red-600 px-3 py-1 rounded-md text-sm font-medium">Call: 9330066455</a>
+          <a href="https://wa.me/919330066455" target="_blank" rel="noopener" class="bg-white text-green-600 px-3 py-1 rounded-md text-sm font-medium">WhatsApp Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header / Nav -->
   <header class="border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3">
-        <span class="sr-only">Monarch</span>
-        <div class="w-10 h-10 bg-gray-800 text-white flex items-center justify-center rounded">
-          M
+        <span class="sr-only">Nusrat Enterprises</span>
+        <div class="w-10 h-10 bg-red-600 text-white flex items-center justify-center rounded">
+          NE
         </div>
-        <span class="text-lg font-semibold tracking-wide">Monarch</span>
+        <span class="text-lg font-semibold tracking-wide">Nusrat Enterprises</span>
       </a>
       <nav class="hidden md:flex gap-6 items-center text-sm">
         <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
@@ -40,6 +68,7 @@
       <a href="about.html" class="py-2">About</a>
       <a href="contact.html" class="py-2">Contact</a>
       <a href="cart.html" class="py-2">Cart (<span id="cart-count-mobile">0</span>)</a>
+      <a href="https://wa.me/919330066455" class="py-2">WhatsApp Support: 9330066455</a>
     </div>
   </div>
 
@@ -68,10 +97,10 @@
       </div>
     </section>
 
-    <!-- Why Monarch -->
+    <!-- Why Nusrat Enterprises -->
     <section class="bg-gray-50">
       <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
-        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4628a6c1f1b9b9f6d6c1a2b4b2a1c0d0" alt="Men's fashion" class="w-full h-64 object-cover rounded-md shadow-sm" />
+        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=4628a6c1f1b9b9f6d6c1a2b4b2a1c0d0" alt="Men's fashion" class="w-full h-64 object-cover rounded" />
         <div>
           <h3 class="text-xl font-semibold">Built for everyday confidence</h3>
           <p class="mt-3 text-gray-700">We design clean, wearable pieces with premium basics and modern cuts. Neutral palettes and large product images let you focus on fit and detail.</p>
@@ -80,6 +109,10 @@
             <li>Timeless silhouettes</li>
             <li>Ethical retail & transparent pricing</li>
           </ul>
+          <div class="mt-4 text-sm text-gray-700">
+            <div class="font-medium">Deals in:</div>
+            <div>Men's & Kids' wear: T-shirts | Shirts | Jeans | Formal pants | Chinos | Trousers | Half pants | Sportswear | Innerwear</div>
+          </div>
         </div>
       </div>
     </section>
@@ -90,10 +123,12 @@
     <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
       <div>
         <a href="/" class="flex items-center gap-3">
-          <div class="w-8 h-8 bg-gray-800 text-white flex items-center justify-center rounded">M</div>
-          <span class="font-semibold">Monarch</span>
+          <div class="w-8 h-8 bg-red-600 text-white flex items-center justify-center rounded">NE</div>
+          <span class="font-semibold">Nusrat Enterprises</span>
         </a>
-        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — India</p>
+        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — Wholesaler & Retailer</p>
+        <p class="text-sm text-gray-600 mt-1">GSTIN: 21FCJPA3223D1ZG</p>
+        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar - 751014</p>
       </div>
       <nav class="flex gap-4">
         <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
@@ -102,6 +137,12 @@
       </nav>
     </div>
   </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/919330066455" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
+    <span class="font-medium text-sm">WhatsApp Support: 9330066455</span>
+  </a>
 
   <script src="js/utils.js"></script>
   <script src="js/products.js"></script>
@@ -113,8 +154,8 @@
     });
 
     // initialize UI
-    Products.renderFeatured('#featured-list', 8);
-    Cart.updateCartCountUI();
+    if (typeof Products !== 'undefined' && Products.renderFeatured) Products.renderFeatured('#featured-list', 8);
+    if (typeof Cart !== 'undefined' && Cart.updateCartCountUI) Cart.updateCartCountUI();
   </script>
 </body>
 </html>
