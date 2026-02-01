@@ -62,7 +62,8 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
+        <!-- https://wa.me/919330066455?text=Hi%20I%20need%20assistance -->
+        <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
           <span class="text-sm font-medium">WhatsApp</span>
         </a>
@@ -122,16 +123,56 @@
       </div>
     </section>
 
-    <!-- Featured products -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <div class="flex items-center justify-between">
-        <h2 class="text-lg font-semibold">Featured</h2>
-        <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">View all</a>
+<section class="bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center justify-between">
+      <h2 class="text-lg font-semibold">Customer Reviews</h2>
+      <a href="https://www.google.com/search?client=mobilesearchapp&sca_esv=0091f1adde5afd41&channel=iss&hl=en_GB&rlz=1MDAPLA_en-GBIN1088IN1088&v=381.1.792835455&cs=1&sxsrf=AE3TifO8mOSczRGtVay16jB5kaY8IZjSzQ:1759773230659&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E4oWdu000SHpY4Qos8xxSfSjCHF57FFTWnkNH7WvXmptla-PnW9oswknadLRSHjnVMo_oPyZ6HO7oH0Sc4RKyTGYfCW9u9xAcpr-I38jtVtOkuoCJg%3D%3D&q=NUSRAT+ENTERPRISES+Reviews&sa=X&ved=2ahUKEwi50LGSkpCQAxWaoa8BHQXxD3MQ0bkNegQIJhAE&biw=980&bih=1844&dpr=3">Write a review</a>
+    </div>
+
+    <!-- Stars + summary (editable numbers or bind from JS) -->
+    <div class="mt-4 flex items-center gap-3">
+      <div class="flex text-yellow-500" aria-label="Rating: 4.8 out of 5">
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927l1.902 3.853 4.25.618-3.076 2.998.726 4.235L10 12.347l-3.851 2.004.735-4.235L3.8 7.398l4.25-.618L9.049 2.927z"></path></svg>
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927l1.902 3.853 4.25.618-3.076 2.998.726 4.235L10 12.347l-3.851 2.004.735-4.235L3.8 7.398l4.25-.618L9.049 2.927z"></path></svg>
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927l1.902 3.853 4.25.618-3.076 2.998.726 4.235L10 12.347l-3.851 2.004.735-4.235L3.8 7.398l4.25-.618L9.049 2.927z"></path></svg>
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927l1.902 3.853 4.25.618-3.076 2.998.726 4.235L10 12.347l-3.851 2.004.735-4.235L3.8 7.398l4.25-.618L9.049 2.927z"></path></svg>
+        <svg class="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927l1.902 3.853 4.25.618-3.076 2.998.726 4.235L10 12.347l-3.851 2.004.735-4.235L3.8 7.398l4.25-.618L9.049 2.927z"></path></svg>
       </div>
-      <div id="featured-list" class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Product cards injected by js/products.js -->
-      </div>
-    </section>
+      <div class="text-sm text-gray-700">4.8/5 based on 1786 ratings</div>
+    </div>
+
+    <!-- Review cards -->
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-white p-5 rounded shadow-sm card">
+        <div class="flex items-center justify-between">
+          <div class="font-medium">Rahul S.</div>
+          <div class="text-yellow-500" aria-label="5 stars">★★★★★</div>
+        </div>
+        <p class="mt-2 text-gray-700 text-sm">Great wholesale prices and quick WhatsApp support. Quality tees and chinos.</p>
+        <div class="mt-3 text-xs text-gray-500">Verified purchase</div>
+      </article>
+
+      <article class="bg-white p-5 rounded shadow-sm card">
+        <div class="flex items-center justify-between">
+          <div class="font-medium">Priya M.</div>
+          <div class="text-yellow-500" aria-label="5 stars">★★★★★</div>
+        </div>
+        <p class="mt-2 text-gray-700 text-sm">Neat store at Gautam Nagar. Got kidswear in bulk for my shop.</p>
+        <div class="mt-3 text-xs text-gray-500">Local Guide</div>
+      </article>
+
+      <article class="bg-white p-5 rounded shadow-sm card">
+        <div class="flex items-center justify-between">
+          <div class="font-medium">Aman K.</div>
+          <div class="text-yellow-500" aria-label="4 stars">★★★★☆</div>
+        </div>
+        <p class="mt-2 text-gray-700 text-sm">Good fitting and neutral colors. Wish for more sportswear sizes.</p>
+        <div class="mt-3 text-xs text-gray-500">In-store purchase</div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <!-- Why choose us -->
     <section class="bg-gray-50">
@@ -152,6 +193,26 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-white border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-4 py-10 text-center">
+    <h3 class="text-lg font-semibold text-gray-900">Connect With Us</h3>
+    <p class="text-gray-600 mt-1 text-sm">New arrivals, offers & restocks — straight from our store</p>
+
+    <div class="mt-5 flex justify-center flex-wrap gap-4">
+      <!-- Instagram -->
+      https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&utm_source=website&utm_medium=section&utm_campaign=social
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10z"/></svg>
+        Instagram
+      </a>
+      <!-- WhatsApp Channel -->
+      https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&utm_medium=section&utm_campaign=social
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A12 12 0 001.61 17.84L0 24l6.16-1.57A12 12 0 1020.52 3.48z"/></svg>
+        WhatsApp Channel
+      </a>
+    </div>
+  </div>
+</section>
   </main>
 
   <!-- Footer -->
