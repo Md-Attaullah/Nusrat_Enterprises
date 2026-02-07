@@ -95,14 +95,14 @@
       <!-- Mobile social icons -->
       <div class="flex sm:hidden items-center gap-2 lg:gap-3">
         <!-- Instagram (icon only) -->
-        <a href="https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&amp;utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises on Instagram" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <a href="https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&amp;utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises on Instagram" class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path>
           </svg>
         </a>
 
         <!-- WhatsApp Channel (icon only) -->
-        <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises WhatsApp Channel" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
+        <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises WhatsApp Channel" class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
           </svg>
@@ -160,7 +160,54 @@
         </div>
 
         <div>
-          <img src="image/d63e325f-fecf-4027-9821-32ac535cf6a0.jpeg" alt="Menswear selection from Nusrat Enterprises" loading="lazy">
+          <!-- HTML -->
+<img
+  id="nusrat-img"
+  src="image/d63e325f-fecf-4027-9821-32ac535cf6a0.jpeg"
+  data-hover-src="image\DE5B2B05-AB02-4E19-B28C-B5A49911DDAC.png"
+  alt="Menswear selection from Nusrat Enterprises"
+  loading="lazy"
+  style="display:block;max-width:100%;height:auto;border-radius:8px;"
+/>
+
+<!-- JS (place before </body>) -->
+<script>
+  (function () {
+    const img = document.getElementById('nusrat-img');
+    if (!img) return;
+
+    const originalSrc = img.getAttribute('src');
+    const hoverSrc = img.getAttribute('data-hover-src');
+
+    // Preload hover image to prevent flicker
+    const preloader = new Image();
+    preloader.src = hoverSrc;
+
+    const showHover = () => img.setAttribute('src', hoverSrc);
+    const showOriginal = () => img.setAttribute('src', originalSrc);
+
+    // Mouse users
+    img.addEventListener('mouseenter', showHover);
+    img.addEventListener('mouseleave', showOriginal);
+
+    // Keyboard users (focus/blur)
+    // If the image is not inside a link/button, make it focusable:
+    if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
+    img.addEventListener('focus', showHover);
+    img.addEventListener('blur', showOriginal);
+
+    // Touch: tap to preview briefly
+    let previewing = false;
+    img.addEventListener('touchstart', function (e) {
+      if (!previewing) {
+        previewing = true;
+        showHover();
+        setTimeout(() => { showOriginal(); previewing = false; }, 1200);
+        e.preventDefault();
+      }
+    }, { passive: false });
+  })();
+</script>
         </div>
       </div>
     </section>
@@ -205,23 +252,39 @@
 
     <!-- Why choose us -->
     <section class="bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
-        <img src="image/18F976A5-BD53-42F8-9C06-BEA54B2635F1.png" alt="Everyday clothing collection" loading="lazy">
-        <div>
-          <h3 class="text-xl font-semibold">Built for everyday confidence</h3>
-          <p class="mt-3 text-gray-700">Clean, wearable pieces with modern cuts. Neutral palettes and clear photos help you choose the right fit.</p>
-          <ul class="mt-4 text-gray-700 space-y-2 list-disc list-inside">
-            <li>High-quality materials</li>
-            <li>Timeless silhouettes</li>
-            <li>Ethical retail &amp; transparent pricing</li>
-          </ul>
-          <div class="mt-4 text-sm text-gray-700">
-            <div class="font-medium">Deals in:</div>
-            <div>Men's &amp; Kids' wear: T-shirts | Shirts | Jeans | Formal pants | Chinos | Trousers | Half pants | Sportswear | Innerwear</div>
-          </div>
-        </div>
+  <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
+    <div class="relative group w-full" style="border-radius:2px; overflow:hidden;">
+      <!-- Base image -->
+      <img
+        src="image/bb642179-cf22-45ee-a443-d5521f57d684.jpeg"
+        alt="Everyday clothing collection"
+        loading="lazy"
+        class="block w-full h-auto"
+      />
+      <!-- Hover image -->
+      <img
+        src="image/18F976A5-BD53-42F8-9C06-BEA54B2635F1.png"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        loading="eager"
+      />
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold">Built for everyday confidence</h3>
+      <p class="mt-3 text-gray-700">Clean, wearable pieces with modern cuts. Neutral palettes and clear photos help you choose the right fit.</p>
+      <ul class="mt-4 text-gray-700 space-y-2 list-disc list-inside">
+        <li>High-quality materials</li>
+        <li>Timeless silhouettes</li>
+        <li>Ethical retail &amp; transparent pricing</li>
+      </ul>
+      <div class="mt-4 text-sm text-gray-700">
+        <div class="font-medium">Deals in:</div>
+        <div>Men's &amp; Kids' wear: T-shirts | Shirts | Jeans | Formal pants | Chinos | Trousers | Half pants | Sportswear | Innerwear</div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Reviews -->
     <section class="bg-gray-50">
