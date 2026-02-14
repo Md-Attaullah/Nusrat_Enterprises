@@ -1,62 +1,174 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- ===================== Base Meta ===================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Nusrat Enterprises</title>
-  <meta name="description" content="Learn about Nusrat Enterprises — our story, mission and values. Wholesaler & Retailer in Bhubaneswar." />
+  <title>Nusrat Enterprises — Wholesaler & Retailer</title>
+
+  <!-- ===================== SEO Meta ===================== -->
+  <meta name="description" content="Nusrat Enterprises — Wholesaler & Retailer of men's & kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear and more. Located in Goutam Nagar, Bhubaneswar.">
   <link rel="icon" href="images/favicon.ico" />
+
+  <!-- ===================== Open Graph ===================== -->
+  <meta property="og:title" content="Nusrat Enterprises — Wholesaler & Retailer">
+  <meta property="og:description" content="Men's & kids' wear at wholesale prices in Gautam Nagar, Bhubaneswar.">
+  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:url" content="https://your-domain.example">
+  <meta property="og:type" content="website">
+
+  <!-- ===================== Twitter Card ===================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nusrat Enterprises — Wholesaler & Retailer">
+  <meta name="twitter:description" content="T‑shirts, shirts, jeans, chinos, innerwear and more.">
+  <meta name="twitter:image" content="images/og-cover.jpg">
+
+  <!-- ===================== Tailwind (CDN) ===================== -->
+  <!-- For production, consider building Tailwind to a static CSS file for performance. -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ===================== Small custom styles ===================== -->
+  <style>
+    .site-header { z-index: 50; }
+    :focus { outline: 3px solid rgba(59,130,246,0.35); outline-offset: 2px; }
+    .brand-logo { background: #E11D1D; color: #fff; }
+    .card:hover { transform: translateY(-4px); transition: transform .18s ease; }
+  </style>
+
+  <!-- ===================== Structured data (Store) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Nusrat Enterprises",
+    "description": "Wholesaler &amp; Retailer - Men's &amp; Kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear.",
+    "telephone": "+919330066455",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. 53, Goutam Nagar",
+      "addressLocality": "Bhubaneswar",
+      "postalCode": "751014",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Sa 09:30-19:30"
+  }
+  </script>
 </head>
+
 <body class="antialiased text-gray-900 bg-white">
 
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-sm px-3 py-2 rounded shadow">Skip to content</a>
-
-  <!-- Header -->
+  <!-- ========================================================= -->
+  <!-- ======================= Header / Nav ===================== -->
+  <!-- ========================================================= -->
   <header class="site-header sticky top-0 bg-white border-b border-gray-200">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-4">
-        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold" style="background:#E11D1D;color:#fff;">NE</div>
+    <div class="max-w-6xl mx-auto px-5 lg:px-4 py-4 flex items-center justify-between">
+
+      <!-- Brand (logo + name) -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold">NE</div>
         <div>
           <div class="text-lg font-semibold">Nusrat Enterprises</div>
-          <div class="text-xs text-gray-500">Wholesaler & Retailer</div>
+          <div class="text-xs text-gray-500">Wholesaler &amp; Retailer</div>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
-        <a href="index.html" class="text-gray-700 hover:font-bold">Home</a>
-        <a href="products.html" class="text-gray-700 hover:font-bold">Products</a>
-        <a href="about.html" class="text-gray-700 hover:font-bold">About</a>
-        <a href="contact.html" class="text-gray-700 hover:font-bold">Contact</a>
-        <a href="cart.html" class="text-gray-700 hover:font-bold">Cart (<span id="cart-count">0</span>)</a>
+      <!-- Primary nav (desktop) -->
+      <nav class="hidden md:flex items-center gap-4 lg:gap-6 text-sm" aria-label="Primary">
+        <a href="index.html" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
+        <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
+        <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+        <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
-          <span class="text-sm font-medium">WhatsApp</span>
+      <!-- Social actions (desktop only) -->
+      <div class="hidden sm:flex items-center gap-2 lg:gap-3">
+        <!-- Instagram CTA -->
+        <a
+          href="https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&amp;utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+          target="_blank"
+          rel="noopener"
+          aria-label="Follow Nusrat Enterprises on Instagram"
+          class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path>
+          </svg>
+          <span>Instagram</span>
         </a>
 
-        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-md border border-gray-200">
-          <span class="sr-only">Toggle navigation</span>
-          <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <!-- WhatsApp Channel CTA -->
+        <a
+          href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+          target="_blank"
+          rel="noopener"
+          aria-label="Follow Nusrat Enterprises WhatsApp Channel"
+          class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+          </svg><span>WhatsApp</span>
+        </a>
       </div>
+
+      <!-- Social icons (mobile) -->
+      <div class="flex sm:hidden items-center gap-2 lg:gap-3">
+        <!-- Instagram (icon only) -->
+        <a
+          href="https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&amp;utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+          target="_blank"
+          rel="noopener"
+          aria-label="Follow Nusrat Enterprises on Instagram"
+          class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path>
+          </svg>
+        </a>
+
+        <!-- WhatsApp Channel (icon only) -->
+        <a
+          href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+          target="_blank"
+          rel="noopener"
+          aria-label="Follow Nusrat Enterprises WhatsApp Channel"
+          class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile menu button (hamburger) -->
+      <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden ml-2 p-2 rounded-md border border-gray-200">
+        <span class="sr-only">Toggle navigation</span>
+        <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
   </header>
 
+  <!-- ======================= Mobile nav (collapsible) ======================= -->
   <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
     <div class="px-4 py-4 space-y-2">
+      <a href="index.html" class="block py-2 rounded hover:bg-gray-50">Home</a>
       <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
       <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
       <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
+      <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" class="block py-2 rounded hover:bg-gray-50">WhatsApp Support: 9330066455</a>
     </div>
   </div>
 
+  <!-- ========================================================= -->
+  <!-- ========================== Main ========================= -->
+  <!-- ========================================================= -->
   <main id="main" class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Page title -->
     <h1 class="text-2xl font-bold mb-4">About Nusrat Enterprises</h1>
 
     <div class="grid md:grid-cols-2 gap-8 items-start">
+      <!-- Left: About text -->
       <div>
         <p class="text-gray-700">Nusrat Enterprises is a wholesaler and retailer of men’s and kids’ apparel based in Bhubaneswar. We focus on high-quality basics, modern cuts and reliable customer service for our retail and wholesale clients.</p>
 
@@ -71,6 +183,7 @@
         </ul>
       </div>
 
+      <!-- Right: Store details card -->
       <aside class="bg-gray-50 p-4 rounded">
         <div class="font-semibold">Store details</div>
         <div class="text-sm text-gray-700 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar</div>
@@ -82,8 +195,11 @@
       </aside>
     </div>
 
+    <!-- ======================= Why shop with us ======================= -->
     <section class="mt-10">
       <h3 class="text-xl font-semibold">Why shop with us</h3>
+
+      <!-- Feature cards -->
       <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded shadow-sm text-center">
           <div class="font-medium">Wholesale Pricing</div>
@@ -95,47 +211,115 @@
         </div>
         <div class="bg-white p-4 rounded shadow-sm text-center">
           <div class="font-medium">Support</div>
-          <div class="text-sm text-gray-500 mt-1">Phone & WhatsApp</div>
+          <div class="text-sm text-gray-500 mt-1">Phone &amp; WhatsApp</div>
         </div>
+      </div>
+
+      <!-- Image with hover overlay -->
+      <div class="relative group w-full" style="border-radius:2px; overflow:hidden;">
+        <!-- Base image -->
+        <img
+          src="image/bb642179-cf22-45ee-a443-d5521f57d684.jpeg"
+          alt="Everyday clothing collection"
+          loading="lazy"
+          class="block w-full h-auto"
+        />
+        <!-- Hover image -->
+        <img
+          src="image/18F976A5-BD53-42F8-9C06-BEA54B2635F1.png"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          loading="eager"
+        />
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ========================================================= -->
+  <!-- ========================== Footer ======================= -->
+  <!-- ========================================================= -->
   <footer class="border-t border-gray-100 mt-12">
     <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
+      <!-- Footer brand + address -->
       <div>
         <a href="index.html" class="flex items-center gap-3">
-          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold"  style="background:#E11D1D;">NE</div>
+          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold">NE</div>
           <span class="font-semibold">Nusrat Enterprises</span>
         </a>
-        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — Wholesaler &amp; Retailer</p>
-        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar</p>
+        <p class="text-sm text-gray-600 mt-2">Modern Men’s Clothing — Wholesaler &amp; Retailer</p>
+        <p class="text-sm text-gray-600 mt-1">Address : Plot No. 53, Goutam Nagar, Bhubaneswar</p>
         <p class="text-sm text-gray-600 mt-1">Odisha - 751014</p>
       </div>
+
+      <!-- Footer navigation + support -->
       <div class="flex flex-col sm:flex-row gap-8">
-        <nav class="flex flex-col gap-2">
+        <!-- Footer nav -->
+        <nav class="flex flex-col gap-2" aria-label="Footer">
           <a href="index.html" class="text-sm text-gray-600 hover:text-gray-900">Home</a>
           <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
           <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
           <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
         </nav>
+
+        <!-- Support + social -->
         <div>
           <div class="text-sm font-medium">Customer Support</div>
           <div class="text-sm text-gray-700 mt-1">WhatsApp: <a href="https://wa.me/919330066455" class="text-green-600">9330066455</a></div>
-          <div class="text-sm text-gray-700 mt-1">Phones: 9330066455 , 9040366455,, 7978830017</div>
+          <div class="text-sm text-gray-700 mt-1">Phones: 9330066455, 9040366455, 7978830017</div>
+
+          <div class="flex py-2 items-center gap-2 lg:gap-3">
+            <!-- Instagram (footer) -->
+            <a
+              href="https://www.instagram.com/nusrat_enterprises?igsh=Y3hzeHgzdnF5dThq&amp;utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow Nusrat Enterprises on Instagram"
+              class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path></svg>
+              <span>Instagram</span>
+            </a>
+
+            <!-- WhatsApp Channel (footer) -->
+            <a
+              href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow Nusrat Enterprises WhatsApp Channel"
+              class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+              </svg><span>WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp floating button -->
-  <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
-    <span class="font-medium text-sm">WhatsApp: 9330066455</span>
+  <!-- ========================================================= -->
+  <!-- =============== Floating Customer Care button ============ -->
+  <!-- ========================================================= -->
+  <a
+    href="tel:+919330066455"
+    target="_blank"
+    rel="noopener"
+    aria-label="Customer Care"
+    class="group fixed right-4 bottom-4 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all"
+  >
+    <!-- Headphone Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-none" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12v5a3 3 0 003 3h1a2 2 0 002-2v-6a2 2 0 00-2-2H5a7 7 0 0114 0h-1a2 2 0 00-2 2v6a2 2 0 002 2h1a3 3 0 003-3v-5c0-5.52-4.48-10-10-10z"></path></svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 translate-x-2 transition-all duration-300 ease-out group-hover:max-w-[220px] group-hover:opacity-100 group-hover:translate-x-0 group-focus:max-w-[220px] group-focus:opacity-100 group-focus:translate-x-0">
+      Customer Care: +91 93300 66455
+    </span>
   </a>
 
+  <!-- ========================================================= -->
+  <!-- =========================== Scripts ===================== -->
+  <!-- ========================================================= -->
   <script>
+    // Mobile menu toggle (accessible)
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileBtn && mobileMenu) {
@@ -145,6 +329,25 @@
         mobileMenu.classList.toggle('hidden');
       });
     }
+
+    // Share CTA (simple)
+    function shareLink() {
+      const url = "https://md-attaullah.github.io/Nusrat_Enterprises/index.html";
+      if (navigator.share) {
+        navigator.share({ title: "Nusrat Enterprises", url }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(url).then(() => alert("Link copied!"));
+      }
+    }
+
+    // Products UI (guarded). Cart removed intentionally.
+    if (typeof Products !== 'undefined' && Products.renderFeatured) {
+      Products.renderFeatured('#featured-list', 8);
+    }
   </script>
+
+  <!-- External scripts (keep if used by your site) -->
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
 </body>
 </html>
