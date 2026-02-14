@@ -1,188 +1,933 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Products — Nusrat Enterprises</title>
-  <meta name="description" content="Browse products — Nusrat Enterprises: T-shirts, shirts, jeans, chinos and more. Wholesale & Retail." />
+  <title>Nusrat Enterprises — Wholesaler & Retailer</title>
+  <meta name="description" content="Nusrat Enterprises — Wholesaler & Retailer of men's & kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear and more. Located in Goutam Nagar, Bhubaneswar.">
   <link rel="icon" href="images/favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nusrat Enterprises — Wholesaler & Retailer">
+  <meta property="og:description" content="Men's & kids' wear at wholesale prices in Gautam Nagar, Bhubaneswar.">
+  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:url" content="https://md-attaullah.github.io/Nusrat_Enterprises/index.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nusrat Enterprises — Wholesaler & Retailer">
+  <meta name="twitter:description" content="T‑shirts, shirts, jeans, chinos, innerwear and more.">
+  <meta name="twitter:image" content="images/og-cover.jpg">
+
+  <!-- Tailwind (CDN). For production, prefer compiled CSS. -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Small custom styles -->
+  <style>
+    .site-header { z-index: 50; }
+    :focus { outline: 3px solid rgba(59,130,246,0.35); outline-offset: 2px; }
+    .brand-logo { background: #E11D1D; color: #fff; }
+    .card:hover { transform: translateY(-4px); transition: transform .18s ease; }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Nusrat Enterprises",
+    "description": "Wholesaler & Retailer - Men's & Kids' wear. T-shirts, shirts, jeans, chinos, trousers, innerwear.",
+    "telephone": "+919330066455",
+    "url": "https://md-attaullah.github.io/Nusrat_Enterprises/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot No. 53, Goutam Nagar",
+      "addressLocality": "Bhubaneswar",
+      "postalCode": "751014",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Sa 09:30-19:30",
+    "sameAs": [
+      "https://www.instagram.com/nusrat_enterprises",
+      "https://wa.me/919330066455"
+    ]
+  }
+  </script>
 </head>
 <body class="antialiased text-gray-900 bg-white">
 
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-sm px-3 py-2 rounded shadow">Skip to content</a>
+  <!-- ============ Header / Nav ============ -->
+  <header class="site-header sticky top-0 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-5 lg:px-4 py-4 flex items-center justify-between">
 
-  <!-- Header / Nav -->
-  <header class="site-header sticky top-0 bg-white border-b border-gray-200 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-4">
-        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold" style="background:#E11D1D;color:#fff;">NE</div>
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="brand-logo w-12 h-12 rounded flex items-center justify-center text-xl font-bold">NE</div>
         <div>
           <div class="text-lg font-semibold">Nusrat Enterprises</div>
-          <div class="text-xs text-gray-500">Wholesaler & Retailer</div>
+          <div class="text-xs text-gray-500">Wholesaler &amp; Retailer</div>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary">
+      <!-- Primary nav -->
+      <nav class="hidden md:flex items-center gap-4 lg:gap-6 text-sm" aria-label="Primary">
         <a href="index.html" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
-        <a href="products.html" class="text-gray-900 font-semibold">Products</a>
+        <a href="products.html" class="text-gray-700 hover:text-gray-900">Products</a>
         <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
         <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
-        <a href="cart.html" class="text-gray-700 hover:text-gray-900">Cart (<span id="cart-count">0</span>)</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded shadow">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
-          <span class="text-sm font-medium">WhatsApp</span>
+      <!-- Social actions (desktop) -->
+      <div class="hidden sm:flex items-center gap-2 lg:gap-3">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/nusrat_enterprises?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises on Instagram" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path>
+          </svg>
+          <span>Instagram</span>
         </a>
 
-        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 rounded-md border border-gray-200">
-          <span class="sr-only">Toggle navigation</span>
-          <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <!-- WhatsApp Channel -->
+        <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises WhatsApp Channel" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
       </div>
+
+      <!-- Mobile social icons -->
+      <div class="flex sm:hidden items-center gap-2 lg:gap-3">
+        <!-- Instagram (icon only) -->
+        <a href="https://www.instagram.com/nusrat_enterprises?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises on Instagram" class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path>
+          </svg>
+        </a>
+
+        <!-- WhatsApp Channel (icon only) -->
+        <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=header&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises WhatsApp Channel" class="inline-flex items-center gap-2 rounded-md px-3 py-3 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden ml-2 p-2 rounded-md border border-gray-200">
+        <span class="sr-only">Toggle navigation</span>
+        <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
   </header>
 
-  <!-- Mobile menu -->
+  <!-- ============ Mobile nav ============ -->
   <div id="mobile-menu" class="md:hidden hidden border-b border-gray-100">
     <div class="px-4 py-4 space-y-2">
       <a href="index.html" class="block py-2 rounded hover:bg-gray-50">Home</a>
       <a href="products.html" class="block py-2 rounded hover:bg-gray-50">Products</a>
       <a href="about.html" class="block py-2 rounded hover:bg-gray-50">About</a>
       <a href="contact.html" class="block py-2 rounded hover:bg-gray-50">Contact</a>
-      <a href="cart.html" class="block py-2 rounded hover:bg-gray-50">Cart (<span id="cart-count-mobile">0</span>)</a>
+      <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" class="block py-2 rounded hover:bg-gray-50">WhatsApp Support: 9330066455</a>
     </div>
   </div>
 
-  <main id="main" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="flex items-center justify-between mb-6">
-      <h1 class="text-2xl font-bold">Products</h1>
-      <div class="text-sm text-gray-600">Showing popular items</div>
+  <!-- ============ <Main> ============ -->
+  <main id="main" class="max-w-6xl mx-auto px-4 py-12" role="main" aria-labelledby="products-heading">
+    <!-- Section header -->
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-6">
+      <div>
+        <h1 id="products-heading" class="text-3xl font-semibold tracking-tight">Shop Products</h1>
+        <p class="text-sm text-gray-600">Curated bestsellers, updated daily</p>
+      </div>
+      <div class="inline-flex items-center gap-2 rounded-full bg-red-50 text-red-700 px-3 py-1 text-xs font-medium">
+        <span class="inline-block h-2 w-2 rounded-full bg-red-600"></span>
+        In-stock &amp; ready to ship
+      </div>
     </div>
 
-    <!-- Filters -->
-    <div class="mb-6 flex items-center gap-3">
-      <select class="border rounded px-3 py-2 text-sm">
-        <option>All categories</option>
-        <option>T-Shirts</option>
-        <option>Shirts</option>
-        <option>Jeans</option>
-      </select>
-      <input type="search" placeholder="Search products..." class="border rounded px-3 py-2 text-sm w-full max-w-md" aria-label="Search products" />
-    </div>
+    <!-- Controls / Filters -->
+    <section aria-labelledby="filters-heading" class="mb-6 border rounded-lg p-3 sm:p-4 bg-white/60 backdrop-blur">
+      <h2 id="filters-heading" class="sr-only">Filter and search products</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <!-- Category -->
+        <label class="text-sm text-gray-700 sr-only" for="category">Category</label>
+        <select id="category" class="w-full sm:w-56 border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500">
+          <option value="">All categories</option>
+          <option>T‑Shirts</option>
+          <option>Shirts</option>
+          <option>Jeans</option>
+          <option>Accessories</option>
+        </select>
 
-    <!-- Products grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Product card 1 -->
-      <article class="bg-white rounded shadow-sm overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1530845640669-0d0f7fa0c5f9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="Classic crew t-shirt" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-3">
-          <h3 class="font-medium">Classic Crew T‑shirt</h3>
-          <div class="text-sm text-gray-500 mt-1">Cotton, multiple colors</div>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">₹299</div>
-            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Classic Crew T-shirt to cart">Add</button>
-          </div>
+        <!-- Sort -->
+        <label class="text-sm text-gray-700 sr-only" for="sort">Sort</label>
+        <select id="sort" class="w-full sm:w-48 border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500">
+          <option value="popular">Most popular</option>
+          <option value="new">Newest</option>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+        </select>
+
+        <!-- Search -->
+        <div class="relative flex-1">
+          <label class="text-sm text-gray-700 sr-only" for="search">Search products</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search products…"
+            class="w-full border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+            aria-label="Search products"
+          />
+          <svg class="absolute left-3 top-2.5 h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
         </div>
-      </article>
 
-      <!-- Product card 2 -->
-      <article class="bg-white rounded shadow-sm overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="Casual linen shirt" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-3">
-          <h3 class="font-medium">Casual Linen Shirt</h3>
-          <div class="text-sm text-gray-500 mt-1">Breathable, summer fit</div>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">₹799</div>
-            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Casual Linen Shirt to cart">Add</button>
+        <!-- Reset Filters -->
+        <button id="reset-filters" type="button" class="sm:ml-auto text-sm text-gray-700 hover:text-gray-900">
+          Reset filters
+        </button>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section aria-labelledby="products-grid-heading">
+      <h2 id="products-grid-heading" class="sr-only">Products</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="products-grid">
+        <!-- ========= HOW TO ADD NEW PRODUCT =========
+             Copy an <article> like below and change:
+             data-id, data-sku, data-name, data-price, data-category, data-sizes, image src/alt, price text.
+             ========================================== -->
+
+        <!-- Card 1 -->
+        <article
+          class="group bg-white rounded-lg shadow-sm ring-1 ring-gray-100 overflow-hidden transition hover:shadow-md focus-within:ring-red-500"
+          data-id="classic-tee"
+          data-sku="1001"
+          data-name="Classic Crew T‑shirt"
+          data-price="299"
+          data-category="t-shirts"
+          data-sizes="S,M,L,XL"
+        >
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1530845640669-0d0f7fa0c5f9?q=80&amp;w=800&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3" alt="Classic Crew T‑shirt in cotton, multiple colors" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="absolute top-2 left-2 inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs font-medium px-2 py-0.5 rounded">
+              <span>Best Seller</span>
+            </div>
+            <button class="absolute top-2 right-2 p-2 rounded-full bg-white/90 text-gray-700 shadow hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    aria-label="Add Classic Crew T‑shirt to wishlist" type="button">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-6.5-4.35-9-7.9C-0.5 9.5 2.2 5 6.5 5c2 0 3.5 1 4.5 2 1-1 2.5-2 4.5-2C19.8 5 22.5 9.5 21 13.1 18.5 16.65 12 21 12 21z"
+                      stroke="currentColor" stroke-width="1.5" fill="currentColor" class="fill-transparent group-hover:fill-red-500 group-hover:stroke-red-500"></path>
+              </svg>
+            </button>
           </div>
-        </div>
-      </article>
 
-      <!-- Product card 3 -->
-      <article class="bg-white rounded shadow-sm overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1520975913164-8f9b461a2a77?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="Slim fit jeans" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-3">
-          <h3 class="font-medium">Slim Fit Jeans</h3>
-          <div class="text-sm text-gray-500 mt-1">Stretch denim</div>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">₹1,299</div>
-            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Slim Fit Jeans to cart">Add</button>
+          <div class="p-3">
+            <h3 class="font-medium text-gray-900 line-clamp-1">Classic Crew T‑shirt</h3>
+            <p class="text-xs text-gray-500 mt-0.5">100% Cotton • Multiple colors</p>
+            <p class="mt-1 text-[11px] text-gray-500">Product No.: <span class="font-mono">1001</span></p>
+
+            <div class="mt-2 flex items-center gap-1 text-amber-500" aria-label="Rated 4.5 out of 5 stars">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 text-amber-300 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <span class="text-xs text-gray-500 ml-1">(128)</span>
+            </div>
+
+            <div class="mt-3 flex items-center justify-between">
+              <div class="flex items-baseline gap-2">
+                <span class="font-semibold text-gray-900">₹299</span>
+                <span class="text-xs text-gray-400 line-through">₹399</span>
+                <span class="text-xs font-medium text-green-600">25% off</span>
+              </div>
+              <div class="inline-flex gap-2">
+                <button type="button"
+                  class="px-3 py-1 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 js-add-btn">
+                  Add
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Product card 4 -->
-      <article class="bg-white rounded shadow-sm overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=jkl" alt="Formal trousers" class="w-full h-48 object-cover" loading="lazy" />
-        <div class="p-3">
-          <h3 class="font-medium">Formal Trousers</h3>
-          <div class="text-sm text-gray-500 mt-1">Smart office wear</div>
-          <div class="mt-3 flex items-center justify-between">
-            <div class="font-semibold">₹1,499</div>
-            <button class="px-3 py-1 bg-red-600 text-white rounded text-sm" aria-label="Add Formal Trousers to cart">Add</button>
+        <!-- Card 2 -->
+        <article
+          class="group bg-white rounded-lg shadow-sm ring-1 ring-gray-100 overflow-hidden transition hover:shadow-md focus-within:ring-red-500"
+          data-id="linen-shirt"
+          data-sku="1002"
+          data-name="Casual Linen Shirt"
+          data-price="799"
+          data-category="shirts"
+          data-sizes="S,M,L,XL"
+        >
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&amp;w=800&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3" alt="Casual Linen Shirt, breathable summer fit" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="absolute top-2 left-2 inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded">
+              New
+            </div>
+            <button class="absolute top-2 right-2 p-2 rounded-full bg-white/90 text-gray-700 shadow hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    aria-label="Add Casual Linen Shirt to wishlist" type="button">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-6.5-4.35-9-7.9C-0.5 9.5 2.2 5 6.5 5c2 0 3.5 1 4.5 2 1-1 2.5-2 4.5-2C19.8 5 22.5 9.5 21 13.1 18.5 16.65 12 21 12 21z"
+                      stroke="currentColor" stroke-width="1.5" fill="currentColor" class="fill-transparent group-hover:fill-red-500 group-hover:stroke-red-500"></path>
+              </svg>
+            </button>
           </div>
-        </div>
-      </article>
-    </div>
+          <div class="p-3">
+            <h3 class="font-medium text-gray-900 line-clamp-1">Casual Linen Shirt</h3>
+            <p class="text-xs text-gray-500 mt-0.5">Breathable • Summer fit</p>
+            <p class="mt-1 text-[11px] text-gray-500">Product No.: <span class="font-mono">1002</span></p>
+            <div class="mt-2 flex items-center gap-1 text-amber-500" aria-label="Rated 4 out of 5 stars">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 text-amber-300 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <span class="text-xs text-gray-500 ml-1">(64)</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="font-semibold text-gray-900">₹799</span>
+              <button type="button"
+                class="px-3 py-1 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 js-add-btn">
+                Add
+              </button>
+            </div>
+          </div>
+        </article>
 
-    <div class="mt-10 text-center">
-      <a href="contact.html" class="px-6 py-3 bg-red-600 text-white rounded-md font-medium shadow hover:bg-red-700">Contact for wholesale pricing</a>
+        <!-- Card 3 -->
+        <article
+          class="group bg-white rounded-lg shadow-sm ring-1 ring-gray-100 overflow-hidden transition hover:shadow-md focus-within:ring-red-500"
+          data-id="slim-jeans"
+          data-sku="1003"
+          data-name="Slim Fit Jeans"
+          data-price="1299"
+          data-category="jeans"
+          data-sizes="28,30,32,34,36"
+        >
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1520975913164-8f9b461a2a77?q=80&amp;w=800&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3" alt="Slim Fit Jeans in stretch denim" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="absolute top-2 left-2 inline-flex items-center gap-1 bg-sky-100 text-sky-800 text-xs font-medium px-2 py-0.5 rounded">
+              Trending
+            </div>
+          </div>
+          <div class="p-3">
+            <h3 class="font-medium text-gray-900 line-clamp-1">Slim Fit Jeans</h3>
+            <p class="text-xs text-gray-500 mt-0.5">Stretch denim</p>
+            <p class="mt-1 text-[11px] text-gray-500">Product No.: <span class="font-mono">1003</span></p>
+            <div class="mt-2 flex items-center gap-1 text-amber-500" aria-label="Rated 5 out of 5 stars">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <span class="text-xs text-gray-500 ml-1">(201)</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="font-semibold text-gray-900">₹1,299</span>
+              <button type="button"
+                class="px-3 py-1 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 js-add-btn">
+                Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article
+          class="group bg-white rounded-lg shadow-sm ring-1 ring-gray-100 overflow-hidden transition hover:shadow-md focus-within:ring-red-500"
+          data-id="formal-trousers"
+          data-sku="1004"
+          data-name="Formal Trousers"
+          data-price="1499"
+          data-category="trousers"
+          data-sizes="30,32,34,36,38"
+        >
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1520975920251-1b2df7b2b3aa?q=80&amp;w=800&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3" alt="Formal Trousers for office wear" class="w-full h-48 object-cover" loading="lazy" />
+          </div>
+          <div class="p-3">
+            <h3 class="font-medium text-gray-900 line-clamp-1">Formal Trousers</h3>
+            <p class="text-xs text-gray-500 mt-0.5">Smart office wear</p>
+            <p class="mt-1 text-[11px] text-gray-500">Product No.: <span class="font-mono">1004</span></p>
+            <div class="mt-2 flex items-center gap-1 text-amber-500" aria-label="Rated 4.5 out of 5 stars">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <svg class="h-4 w-4 text-amber-300 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.49 6.91l6.565-.954L10 0l2.945 5.956 6.565.954-4.755 4.635 1.123 6.545z"/></svg>
+              <span class="text-xs text-gray-500 ml-1">(53)</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="font-semibold text-gray-900">₹1,499</span>
+              <button type="button"
+                class="px-3 py-1 bg-red-600 text-white rounded-md text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 js-add-btn">
+                Add
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden mt-16 text-center">
+        <div class="mx-auto w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
+          <svg class="h-10 w-10 text-gray-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">No products match your filters. Try clearing the search or changing category.</p>
+        <button type="button" class="mt-3 text-sm font-medium text-red-700 hover:text-red-800" id="reset-filters-2">Reset filters</button>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-md font-medium shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M2 5h20v14H2z" stroke="currentColor" stroke-width="1.5"></path><path d="M2 7l10 6L22 7" stroke="currentColor" stroke-width="1.5"></path>
+        </svg>
+        Contact for wholesale pricing
+      </a>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Floating Cart Button -->
+  <button id="open-cart"
+    class="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-red-600 text-white px-4 py-2 shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 5M7 13l-2 7h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+    <span>Cart</span>
+    <span id="cart-count" class="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white/20 px-1 text-xs">0</span>
+  </button>
+
+  <!-- Size Picker Modal -->
+  <div id="size-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="size-modal-title">
+    <div class="absolute inset-0 bg-black/40" data-close-size></div>
+    <div class="absolute inset-0 flex items-end sm:items-center justify-center p-4">
+      <div class="w-full max-w-md rounded-lg bg-white shadow-lg p-4 sm:p-5">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 id="size-modal-title" class="text-lg font-medium">Select size</h3>
+            <p id="size-modal-sub" class="text-sm text-gray-600 mt-0.5"></p>
+          </div>
+          <button class="p-1.5 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500" data-close-size aria-label="Close">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+        </div>
+        <div id="size-options" class="mt-4 flex flex-wrap gap-2"></div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <button id="qty-dec" class="h-9 w-9 rounded border text-lg hover:bg-gray-50">−</button>
+            <input id="qty-input" type="number" min="1" value="1" class="w-14 rounded border px-2 py-1 text-center" aria-label="Quantity">
+            <button id="qty-inc" class="h-9 w-9 rounded border text-lg hover:bg-gray-50">+</button>
+          </div>
+          <button id="confirm-size" class="inline-flex items-center gap-2 rounded-md bg-red-600 text-white px-4 py-2 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <aside id="cart-drawer" class="fixed inset-0 z-50 hidden" aria-labelledby="cart-title" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-black/40" data-close-cart></div>
+    <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-xl flex flex-col">
+      <div class="flex items-center justify-between px-4 py-3 border-b">
+        <h3 id="cart-title" class="text-lg font-semibold">Your Cart</h3>
+        <button class="p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500" data-close-cart aria-label="Close cart">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
+
+      <div id="cart-items" class="flex-1 overflow-y-auto divide-y"></div>
+
+      <div class="border-t p-4 space-y-3">
+        <div class="flex items-center justify-between text-sm">
+          <span class="text-gray-600">Subtotal</span>
+          <span id="cart-subtotal" class="font-medium">₹0</span>
+        </div>
+
+        <!-- Checkout form -->
+        <form id="checkout-form" class="space-y-2">
+          <input type="text" id="cust-name" class="w-full border rounded px-3 py-2 text-sm" placeholder="Full Name" required />
+          <textarea id="cust-address" class="w-full border rounded px-3 py-2 text-sm" rows="2" placeholder="Address (Street, Area)" required></textarea>
+          <div class="flex gap-2">
+            <input type="text" id="cust-city" class="w-1/2 border rounded px-3 py-2 text-sm" placeholder="City" required />
+            <input type="text" id="cust-pincode" class="w-1/2 border rounded px-3 py-2 text-sm" placeholder="PIN Code" required />
+          </div>
+          <input type="tel" id="cust-phone" class="w-full border rounded px-3 py-2 text-sm" placeholder="Your Phone (10 digits)" pattern="\d{10}" required />
+        </form>
+
+        <div class="flex items-center justify-between">
+          <button id="clear-cart" type="button" class="text-sm text-gray-600 hover:text-gray-800">Clear</button>
+          <button id="send-whatsapp" type="button" class="inline-flex items-center gap-2 rounded bg-green-600 text-white px-4 py-2 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.27-1.27C8.57 21.54 10.23 22 12 22z" stroke="currentColor" stroke-width="1.2"></path><path d="M7.5 9.5c.2 2.2 2.8 4.8 5 5 .7.1 1.6-.4 2-.9l.9-1.1c.2-.3.2-.7-.1-1l-1-1c-.2-.2-.5-.3-.8-.2l-1.1.3a.9.9 0 01-.8-.2l-1.3-1.3a.9.9 0 01-.2-.8l.3-1.1c.1-.3 0-.6-.2-.8l-1-1c-.3-.3-.7-.3-1 0l-1 1c-.5.4-1 1.3-.9 2z" stroke="currentColor" stroke-width="1.2"></path></svg>
+            Send on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Footer ============ -->
   <footer class="border-t border-gray-100 mt-12">
     <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-start gap-6">
       <div>
         <a href="index.html" class="flex items-center gap-3">
-          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold"  style="background:#E11D1D;">NE</div>
+          <div class="brand-logo w-10 h-10 rounded flex items-center justify-center text-white font-bold">NE</div>
           <span class="font-semibold">Nusrat Enterprises</span>
         </a>
-        <p class="text-sm text-gray-600 mt-2">Modern men’s clothing — Wholesaler &amp; Retailer</p>
-        <p class="text-sm text-gray-600 mt-1">Plot No. 53, Goutam Nagar, Bhubaneswar</p>
+        <p class="text-sm text-gray-600 mt-2">Modern Men’s Clothing — Wholesaler &amp; Retailer</p>
+        <p class="text-sm text-gray-600 mt-1">Address : Plot No. 53, Goutam Nagar, Bhubaneswar</p>
         <p class="text-sm text-gray-600 mt-1">Odisha - 751014</p>
       </div>
+
       <div class="flex flex-col sm:flex-row gap-8">
-        <nav class="flex flex-col gap-2">
+        <nav class="flex flex-col gap-2" aria-label="Footer">
           <a href="index.html" class="text-sm text-gray-600 hover:text-gray-900">Home</a>
           <a href="about.html" class="text-sm text-gray-600 hover:text-gray-900">About</a>
           <a href="contact.html" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
           <a href="products.html" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
         </nav>
+
         <div>
           <div class="text-sm font-medium">Customer Support</div>
           <div class="text-sm text-gray-700 mt-1">WhatsApp: <a href="https://wa.me/919330066455" class="text-green-600">9330066455</a></div>
           <div class="text-sm text-gray-700 mt-1">Phones: 9330066455, 9040366455, 7978830017</div>
+
+          <div class="flex py-2 items-center gap-2 lg:gap-3">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/nusrat_enterprises?utm_source=website&amp;utm_medium=footer&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises on Instagram" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-pink-600 text-white text-sm font-medium shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm5.25-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z"></path></svg>
+              <span>Instagram</span>
+            </a>
+
+            <!-- WhatsApp Channel -->
+            <a href="https://whatsapp.com/channel/0029VaTqsgN5Ui2gpzD62D06?utm_source=website&amp;utm_medium=footer&amp;utm_campaign=social" target="_blank" rel="noopener" aria-label="Follow Nusrat Enterprises WhatsApp Channel" class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-green-600 text-white text-sm font-medium shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.97L0 24l6.26-1.64A12 12 0 1012 0zm0 22c-1.82 0-3.58-.49-5.12-1.41l-.37-.22-3.51.92.94-3.41-.23-.36A9.96 9.96 0 1122 12c0 5.52-4.48 10-10 10zm5.28-7.33c-.29-.15-1.7-.84-1.97-.94-.27-.1-.47-.15-.66.15-.2.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.15-1.16-.43-2.22-1.39-.82-.73-1.38-1.62-1.54-1.89-.17-.29-.02-.42.13-.56.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.63-1.52-.86-2.08-.23-.55-.43-.47-.59-.48l-.51-.01c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.24 0 1.32.99 2.61 1.13 2.81.14.19 1.95 2.93 4.71 4.11.66.28 1.17.45 1.57.57.66.2 1.26.18 1.74.11.53-.08 1.64-.66 1.87-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.53-.32z"></path>
+              </svg><span>WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp floating button -->
-  <a href="https://wa.me/919330066455?text=Hi%20I%20need%20assistance" target="_blank" rel="noopener" aria-label="WhatsApp support" class="fixed right-4 bottom-4 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.556 4.085 1.611 5.835L0 24l6.41-1.633A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.256-6.227-3.48-8.52zM12 22.002a10 10 0 01-5.196-1.44l-.373-.221L4 20.002l.66-2.45-.24-.39A8.002 8.002 0 1120 12c0 4.42-3.58 8-8 8z"/></svg>
-    <span class="font-medium text-sm">WhatsApp: 9330066455</span>
+  <!-- ============ Floating Customer Care button ============ -->
+  <a
+    href="tel:+919330066455"
+    target="_blank"
+    rel="noopener"
+    aria-label="Customer Care"
+    class="group fixed right-4 bottom-4 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 transition-all"
+  >
+    <!-- Headphone Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-none" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12v5a3 3 0 003 3h1a2 2 0 002-2v-6a2 2 0 00-2-2H5a7 7 0 0114 0h-1a2 2 0 00-2 2v6a2 2 0 002 2h1a3 3 0 003-3v-5c0-5.52-4.48-10-10-10z"></path></svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 translate-x-2 transition-all duration-300 ease-out group-hover:max-w-[220px] group-hover:opacity-100 group-hover:translate-x-0 group-focus:max-w-[220px] group-focus:opacity-100 group-focus:translate-x-0">
+      Customer Care: +91 93300 66455
+    </span>
   </a>
 
-  <script src="js/utils.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/cart.js"></script>
+  <!-- ============ Scripts ============ -->
+  <script>
+    // Mobile menu toggle (accessible)
+    (function() {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+          mobileBtn.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    })();
+  </script>
 
   <script>
-    // Mobile menu toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => {
-        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
-        mobileBtn.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
+    (function () {
+      /*** -----------------------------
+       *  CONFIG: Your store WhatsApp number (digits only, no +, no spaces)
+       * --------------------------------*/
+      const STORE_WHATSAPP = '919330066455';
+
+      /* ====== Filters/Search ====== */
+      const search = document.getElementById('search');
+      const category = document.getElementById('category');
+      const grid = document.getElementById('products-grid');
+      const empty = document.getElementById('empty-state');
+      const resetBtn = document.getElementById('reset-filters');
+      const resetBtn2 = document.getElementById('reset-filters-2');
+
+      function normalize(s) { return String(s || '').toLowerCase(); }
+
+      function applyFilters() {
+        const q = normalize(search?.value);
+        const cat = normalize(category?.value);
+        let visible = 0;
+
+        grid.querySelectorAll('article').forEach(card => {
+          const name = normalize(card.querySelector('h3')?.textContent);
+          // includes first <p> only; okay for simple search
+          const details = normalize(card.querySelector('p')?.textContent);
+          const matchesText = !q || name.includes(q) || details.includes(q);
+          const inCategory =
+            !cat ||
+            (cat.includes('shirt') && /shirt/i.test(name + ' ' + details)) ||
+            (cat.includes('t') && /t[- ]?shirt/i.test(name + ' ' + details)) ||
+            (cat.includes('jean') && /jean/i.test(name + ' ' + details)) ||
+            (cat.includes('access') && /belt|cap|hat|bag|sock|access/i.test(name + ' ' + details));
+          const show = matchesText && inCategory;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        empty.classList.toggle('hidden', visible !== 0);
+      }
+
+      search?.addEventListener('input', applyFilters);
+      category?.addEventListener('change', applyFilters);
+
+      document.getElementById('sort')?.addEventListener('change', (e) => {
+        const val = e.target.value;
+        const cards = Array.from(grid.children);
+        const priceOf = (card) => {
+          const t = card.dataset.price || card.querySelector('.font-semibold')?.textContent || '';
+          return Number(String(t).replace(/[^\d.]/g, '')) || 0;
+        };
+        const popularScore = (card) => {
+          const count = card.querySelector('.text-xs.text-gray-500.ml-1')?.textContent || '(0)';
+          return Number(count.replace(/[^\d]/g, '')) || 0;
+        };
+        const newCards = cards.slice().sort((a, b) => {
+          switch (val) {
+            case 'price_asc':  return priceOf(a) - priceOf(b);
+            case 'price_desc': return priceOf(b) - priceOf(a);
+            case 'new':        return (b.dataset.addedAt||'').localeCompare(a.dataset.addedAt||'');
+            default:           return popularScore(b) - popularScore(a); // popular
+          }
+        });
+        newCards.forEach(c => grid.appendChild(c));
       });
-    }
+
+      function resetFilters() {
+        if (search) search.value = '';
+        if (category) category.value = '';
+        applyFilters();
+      }
+      resetBtn?.addEventListener('click', resetFilters);
+      resetBtn2?.addEventListener('click', resetFilters);
+
+      // Initial filter
+      applyFilters();
+
+      /* ====== Cart & Checkout logic (with SKU & WhatsApp) ====== */
+      const el = {
+        addBtns: () => document.querySelectorAll('.js-add-btn'),
+        sizeModal: document.getElementById('size-modal'),
+        sizeOptions: document.getElementById('size-options'),
+        sizeSub: document.getElementById('size-modal-sub'),
+        qtyInput: document.getElementById('qty-input'),
+        qtyInc: document.getElementById('qty-inc'),
+        qtyDec: document.getElementById('qty-dec'),
+        confirmSize: document.getElementById('confirm-size'),
+        openCart: document.getElementById('open-cart'),
+        cartDrawer: document.getElementById('cart-drawer'),
+        cartItems: document.getElementById('cart-items'),
+        cartSubtotal: document.getElementById('cart-subtotal'),
+        cartCount: document.getElementById('cart-count'),
+        clearCart: document.getElementById('clear-cart'),
+        sendWhatsApp: document.getElementById('send-whatsapp'),
+        form: document.getElementById('checkout-form'),
+        name: document.getElementById('cust-name'),
+        address: document.getElementById('cust-address'),
+        city: document.getElementById('cust-city'),
+        pincode: document.getElementById('cust-pincode'),
+        phone: document.getElementById('cust-phone'),
+      };
+
+      const cart = []; // items: {id, sku, name, price, image, size, qty}
+
+      const state = {
+        pendingProduct: null, // {id, sku, name, price, image, sizes[]}
+        selectedSize: null,
+        pendingQty: 1
+      };
+
+      function fmtINR(n) {
+        try {
+          return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
+        } catch (_) {
+          return '₹' + n;
+        }
+      }
+
+      function openSizeModal(productArticle) {
+        const img = productArticle.querySelector('img')?.src || '';
+        const sizesAttr = productArticle.dataset.sizes || 'S,M,L,XL';
+        const sizes = sizesAttr.split(',').map(s => s.trim()).filter(Boolean);
+
+        state.pendingProduct = {
+          id: productArticle.dataset.id,
+          sku: productArticle.dataset.sku || '',
+          name: productArticle.dataset.name || productArticle.querySelector('h3')?.textContent?.trim(),
+          price: Number(productArticle.dataset.price || '0'),
+          image: img,
+          sizes
+        };
+        state.selectedSize = null;
+        state.pendingQty = 1;
+        el.qtyInput.value = '1';
+
+        el.sizeSub.textContent = state.pendingProduct.name + (state.pendingProduct.sku ? ` • Product No.: ${state.pendingProduct.sku}` : '');
+        el.sizeOptions.innerHTML = '';
+        sizes.forEach(size => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = size;
+          btn.className = 'px-3 py-1 rounded border text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500';
+          btn.addEventListener('click', () => {
+            state.selectedSize = size;
+            [...el.sizeOptions.children].forEach(b => b.classList.remove('bg-red-600','text-white','border-red-600'));
+            btn.classList.add('bg-red-600','text-white','border-red-600');
+          });
+          el.sizeOptions.appendChild(btn);
+        });
+
+        el.sizeModal.classList.remove('hidden');
+      }
+
+      function closeSizeModal() {
+        el.sizeModal.classList.add('hidden');
+      }
+
+      function openCartDrawer() {
+        el.cartDrawer.classList.remove('hidden');
+        renderCart();
+      }
+
+      function closeCartDrawer() {
+        el.cartDrawer.classList.add('hidden');
+      }
+
+      function addToCart(item) {
+        const key = `${item.id}__${item.size}`;
+        const existing = cart.find(i => `${i.id}__${i.size}` === key);
+        if (existing) {
+          existing.qty += item.qty;
+        } else {
+          cart.push(item);
+        }
+        updateCartBadge();
+      }
+
+      function updateCartBadge() {
+        const count = cart.reduce((sum, i) => sum + i.qty, 0);
+        el.cartCount.textContent = count;
+      }
+
+      function cartSubtotal() {
+        return cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      }
+
+      function renderCart() {
+        if (!el.cartItems) return;
+        el.cartItems.innerHTML = '';
+        cart.forEach((i, idx) => {
+          const row = document.createElement('div');
+          row.className = 'flex gap-3 p-3';
+          row.innerHTML = `
+            <img src="${i.image}" alt="${i.name}" class="h-16 w-16 rounded object-cover border" />
+            <div class="flex-1">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="text-sm font-medium">${i.name}</div>
+                  <div class="text-[11px] text-gray-500">Product No.: <span class="font-mono">${i.sku || '-'}</span></div>
+                  <div class="text-xs text-gray-500">Size: ${i.size}</div>
+                </div>
+                <button class="text-xs text-gray-500 hover:text-red-600" data-remove="${idx}">Remove</button>
+              </div>
+              <div class="mt-2 flex items-center justify-between">
+                <div class="inline-flex items-center gap-2">
+                  <button class="h-7 w-7 rounded border hover:bg-gray-50" data-dec="${idx}">−</button>
+                  <span class="min-w-6 text-center text-sm" aria-live="polite">${i.qty}</span>
+                  <button class="h-7 w-7 rounded border hover:bg-gray-50" data-inc="${idx}">+</button>
+                </div>
+                <div class="text-sm font-medium">${fmtINR(i.price * i.qty)}</div>
+              </div>
+            </div>
+          `;
+          el.cartItems.appendChild(row);
+        });
+
+        el.cartItems.querySelectorAll('[data-remove]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = Number(btn.getAttribute('data-remove'));
+            cart.splice(idx, 1);
+            updateCartBadge();
+            renderCart();
+          });
+        });
+        el.cartItems.querySelectorAll('[data-inc]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = Number(btn.getAttribute('data-inc'));
+            cart[idx].qty += 1;
+            updateCartBadge();
+            renderCart();
+          });
+        });
+        el.cartItems.querySelectorAll('[data-dec]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = Number(btn.getAttribute('data-dec'));
+            cart[idx].qty = Math.max(1, cart[idx].qty - 1);
+            updateCartBadge();
+            renderCart();
+          });
+        });
+
+        el.cartSubtotal.textContent = fmtINR(cartSubtotal());
+      }
+
+      // Bind "Add" buttons
+      function bindAddButtons() {
+        el.addBtns().forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const card = e.currentTarget.closest('article');
+            openSizeModal(card);
+          });
+        });
+      }
+      bindAddButtons();
+
+      // Size modal events
+      el.qtyInc.addEventListener('click', () => {
+        state.pendingQty = Math.max(1, Number(el.qtyInput.value || '1') + 1);
+        el.qtyInput.value = String(state.pendingQty);
+      });
+      el.qtyDec.addEventListener('click', () => {
+        state.pendingQty = Math.max(1, Number(el.qtyInput.value || '1') - 1);
+        el.qtyInput.value = String(state.pendingQty);
+      });
+      el.qtyInput.addEventListener('input', () => {
+        state.pendingQty = Math.max(1, Number(el.qtyInput.value || '1'));
+      });
+
+      el.confirmSize.addEventListener('click', () => {
+        if (!state.pendingProduct) return;
+        if (!state.selectedSize) {
+          alert('Please select a size.');
+          return;
+        }
+        addToCart({
+          id: state.pendingProduct.id,
+          sku: state.pendingProduct.sku || '',
+          name: state.pendingProduct.name,
+          price: state.pendingProduct.price,
+          image: state.pendingProduct.image,
+          size: state.selectedSize,
+          qty: state.pendingQty
+        });
+        closeSizeModal();
+        openCartDrawer();
+      });
+
+      document.querySelectorAll('[data-close-size]').forEach(x => x.addEventListener('click', closeSizeModal));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSizeModal();
+          closeCartDrawer();
+        }
+      });
+
+      // Cart drawer open/close
+      el.openCart.addEventListener('click', openCartDrawer);
+      document.querySelectorAll('[data-close-cart]').forEach(x => x.addEventListener('click', closeCartDrawer));
+
+      // Clear cart
+      el.clearCart.addEventListener('click', () => {
+        cart.length = 0;
+        updateCartBadge();
+        renderCart();
+      });
+
+      // Build WhatsApp text (Customer details first, includes Product No.)
+      function buildWhatsAppText(order, customer) {
+        const lines = [];
+        lines.push('*New Order via Website*');
+        lines.push('');
+
+        // Customer details first
+        lines.push('*Customer Details:*');
+        lines.push(`Name: ${customer.name}`);
+        lines.push(`Phone: ${customer.phone}`);
+        lines.push(`Address: ${customer.address}, ${customer.city} - ${customer.pincode}`);
+        lines.push('');
+
+        // Items
+        lines.push('*Items:*');
+        order.forEach((i, idx) => {
+          const lineTotal = i.price * i.qty;
+          const sku = i.sku ? `Product No.: ${i.sku} • ` : '';
+          lines.push(`${idx + 1}. ${sku}${i.name} (Size: ${i.size}) × ${i.qty} — ₹${i.price} each (Line: ${fmtINR(lineTotal)})`);
+          if (i.image) lines.push(`Image: ${i.image}`);
+        });
+
+        // Subtotal
+        lines.push('');
+        lines.push(`*Subtotal:* ${fmtINR(order.reduce((s, x) => s + x.price * x.qty, 0))}`);
+        lines.push('');
+        lines.push(`Order Time: ${new Date().toLocaleString()}`);
+
+        return lines.join('\n');
+      }
+
+      // Robust WhatsApp click handler with popup fallback
+      (function attachWhatsAppHandler() {
+        const btn = el.sendWhatsApp;
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          try {
+            if (!Array.isArray(cart) || cart.length === 0) {
+              alert('Your cart is empty.');
+              return;
+            }
+            if (!el.form?.reportValidity()) {
+              return; // browser will highlight invalid fields
+            }
+
+            const customer = {
+              name: el.name.value.trim(),
+              address: el.address.value.trim(),
+              city: el.city.value.trim(),
+              pincode: el.pincode.value.trim(),
+              phone: el.phone.value.trim()
+            };
+
+            const msg = buildWhatsAppText(cart, customer);
+            const num = String(STORE_WHATSAPP).replace(/\D/g, '');
+            const url = `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+
+            // Try opening new tab; fallback same tab if blocked
+            const w = window.open(url, '_blank');
+            if (!w || w.closed || typeof w.closed === 'undefined') {
+              location.href = url;
+            }
+          } catch (err) {
+            console.error('[NE] WhatsApp send error:', err);
+            alert('Sorry, something went wrong. Please try again or contact us on WhatsApp.');
+          }
+        });
+      })();
+    })();
   </script>
 </body>
 </html>
